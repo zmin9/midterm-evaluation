@@ -1,20 +1,19 @@
 name: CI
 on:
   pull_request:
-    branches:
-      - dev
 jobs:
   pull_request_test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@3
+      - uses: actions/checkout@v3
         with:
           ref: dev
+      - run: yarn install
       - name: eslint test
-        run: eslint .
+        run: yarn eslint .
       - name: ts test
         if: ${{ success() }}
-        run: tsc .
+        run: yarn tsc
       - name: failure test
         if: ${{ failure() }}
         run: echo "merge fail"
