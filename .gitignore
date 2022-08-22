@@ -6,6 +6,7 @@
 /node_modules
 /.pnp
 .pnp.cjs
+.pnp.loader.mjs
 
 # testing
 /coverage
