@@ -1,0 +1,16 @@
+name: CD
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Build
+        run: yarn build
+
+      - name: Deploy
+        run: yarn run deploy
