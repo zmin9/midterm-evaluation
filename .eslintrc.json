@@ -22,7 +22,6 @@
     "react/react-in-jsx-scope": "off",
     "react/display-name": "off",
     "import/named": "off",
-    "import/order": "error",
     "@typescript-eslint/comma-dangle": "off"
   }
 }
