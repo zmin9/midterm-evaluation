@@ -11,10 +11,21 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     margin: 0;
   }
+  
+  h1, h2, h3 {
+    font-size: 100%;
+    margin: 0;
+    font-weight: inherit;
+  }
+  p {
+    margin: 0;
+  }
 
   a {
-    color: ${({ theme }) => theme.text3};
     text-decoration: underline;
+    :visited {
+      color: currentColor;
+    }
   }
 `;
 

@@ -7,6 +7,7 @@ type TextProps = {
 };
 
 const CustomSpan = styled.span<TextProps>`
+  white-space: pre;
   ${({ type }) => typography[type]}
 `;
 
