@@ -1,6 +1,7 @@
 import palette from './palette';
+import { DefaultTheme } from 'styled-components';
 
-const theme = {
+const theme: DefaultTheme = {
   bg1: palette.white,
   bg2: palette.gray1,
 
