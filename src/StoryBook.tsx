@@ -2,6 +2,7 @@ import React from 'react';
 import Text from './components/Text';
 import Section from './components/Section';
 import Video from './components/Video';
+import ReviewCard from './components/ReviewCard';
 
 const StoryBook = () => {
   return (
@@ -20,6 +21,11 @@ const StoryBook = () => {
       </Section>
       <Section bgColor='bg1' paddingB={40}>
         <Video url='https://www.youtube.com/embed/kb2fdVLIkSU'/>
+      </Section>
+      <Section bgColor='bg2' paddingT={50} paddingB={50}>
+        <ReviewCard img=' '
+                    age='고2' lastName='김'
+                    content='현재 고등수학 앱 중에서 가장 좋은 것 같아요 무엇보다도 부족한 부분만 집중적으로 공부할 수 있도록 문제가 제공되는게 유용한 것 같습니다!!' />
       </Section>
     </>
   );
