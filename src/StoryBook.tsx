@@ -1,6 +1,7 @@
 import React from 'react';
 import Text from './components/Text';
 import Section from './components/Section';
+import Video from './components/Video';
 
 const StoryBook = () => {
   return (
@@ -16,6 +17,9 @@ const StoryBook = () => {
         <Section.Card>
           하하하하하하하
         </Section.Card>
+      </Section>
+      <Section bgColor='bg1' paddingB={40}>
+        <Video url='https://www.youtube.com/embed/kb2fdVLIkSU'/>
       </Section>
     </>
   );
