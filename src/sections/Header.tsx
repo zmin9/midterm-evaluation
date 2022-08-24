@@ -9,10 +9,10 @@ const PageHeader = styled.header`
   text-align: center;
   
   background: url(${BgImg}) 45%/cover no-repeat;
-  height: 648px;
+  height: 463px;
 
-  ${mediaQuery.small}{
-    height: 463px;
+  ${mediaQuery.large}{
+    height: 648px;
   }
 `;
 
