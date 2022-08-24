@@ -1,10 +1,10 @@
 import styled from 'styled-components';
-import mediaQuery from '../styles/mediaQuery';
-import reviews from '../data/review';
-import ReviewCard from './ReviewCard';
-import Section, { SectionContainer } from './Section';
+import mediaQuery from '../../styles/mediaQuery';
+import reviews from '../../data/review';
+import ReviewCard from '../../components/ReviewCard';
+import Section, { SectionContainer } from '../../components/Section';
 
-const ReviewSection = styled(SectionContainer)`
+const ReviewSectionContainer = styled(SectionContainer)`
   background: ${({ theme }) => theme.purpleGradient};
   & > span, h2 {
     color: ${({ theme }) => theme.bg1};
@@ -23,9 +23,9 @@ const ReviewsContainer = styled.div`
   }
 `;
 
-const Reviews = () => {
+const ReviewSection = () => {
   return (
-    <ReviewSection bgColor='bg2' paddingT={60} paddingB={80}>
+    <ReviewSectionContainer bgColor='bg2' paddingT={60} paddingB={80}>
       <Section.Subtitle>
         REVIEW
       </Section.Subtitle>
@@ -40,8 +40,8 @@ const Reviews = () => {
           )
         }
       </ReviewsContainer>
-    </ReviewSection>
+    </ReviewSectionContainer>
   );
 };
 
-export default Reviews;
+export default ReviewSection;
