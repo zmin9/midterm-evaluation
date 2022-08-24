@@ -1,12 +1,6 @@
 import styled from 'styled-components';
 import Text from './Text';
-
-type ReviewInfo = {
-  img: string,
-  age: string,
-  lastName: string,
-  content: string
-};
+import { ReviewInfo } from '../data/review';
 
 const Card = styled.div`
   padding: 20px 12px 17px;
@@ -14,29 +8,29 @@ const Card = styled.div`
   background-color: ${({ theme }) => theme.bg1};
 `;
 
-const ReviewerProfile = styled.div`
+const ReviewerProfile = styled.div<Pick<ReviewInfo, 'imgBgColor'>>`
   margin-bottom: 8px;
   display: flex;
   align-items: center;
-  // TODO add #344252 palette and set color 
+
   img {
     margin-right: 8px;
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background-color: coral;
-  };
+    background-color: ${({ imgBgColor }) => imgBgColor};
+  }
 `;
 
-const ReviewCard = ({ img, age, lastName, content }: ReviewInfo) => {
+const ReviewCard = ({ img, imgBgColor, age, lastName, content }: ReviewInfo) => {
   return (
     <Card>
-      <ReviewerProfile>
+      <ReviewerProfile imgBgColor={imgBgColor}>
         <img src={img} alt={`profile_image_${lastName}`}/>
-        <Text type='textSR'>{age}</Text>
-        <Text type='textSB'>{' ' + lastName + 'OO 학생'}</Text>
+        <Text type="textSR">{age}</Text>
+        <Text type="textSB">{`\0 ${lastName}OO 학생`}</Text>
       </ReviewerProfile>
-      <Text type='textSR'>{content}</Text>
+      <Text type="textSR">{content}</Text>
     </Card>
   );
 };

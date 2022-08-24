@@ -5,6 +5,7 @@ import ImprovingGraphS from '../statics/improving-graph-small.png';
 import styled from 'styled-components';
 import Text from '../components/Text';
 import mediaQuery from '../styles/mediaQuery';
+import Reviews from '../components/Reviews';
 
 const Image = styled.img`
   width: 100%;
@@ -143,6 +144,16 @@ const InfoSections = () => {
             (2021-04-01 ~ 09-30)
           </div>
         </GraphDescription>
+      </Section>
+      <Section bgColor='bg2' paddingT={60} paddingB={80}> {/*TODO 배경&글자색*/}
+        <Section.Subtitle>
+          REVIEW
+        </Section.Subtitle>
+        <Section.Title>
+          {'실제 수학대왕 '}
+          {'학생들의 후기'}
+        </Section.Title>
+        <Reviews/>
       </Section>
     </>
   );
