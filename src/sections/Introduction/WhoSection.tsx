@@ -1,12 +1,8 @@
 import Section from '../../components/Section';
 import { Highlight } from '../../components/Text';
 import Store1stImageS from '../../statics/store-1st-small.png';
-import styled from 'styled-components';
-
-const Image = styled.img`
-  width: 100%;
-  border-radius: 5px;
-`;
+import Store1stImageL from '../../statics/store-1st-large.png';
+import ImageByMediaQuery from '../../components/ImageByMediaQuery';
 
 const WhoSection = () => {
   return (
@@ -27,7 +23,7 @@ const WhoSection = () => {
         </a>
       </Section.Content>
       <Section.Card>
-        <Image src={Store1stImageS} alt="store-1st-app"/>
+        <ImageByMediaQuery small={Store1stImageS} large={Store1stImageL} alt='store-1st-app'/>
       </Section.Card>
     </Section>
   );
