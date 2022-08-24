@@ -45,6 +45,14 @@ const HowImage = styled.div`
   }
 `;
 
+const HowText = styled.div`
+  text-align: center;
+  margin-bottom: 40px;
+  ${mediaQuery.large}{
+    margin-bottom: 0;
+  }
+`;
+
 const HowSection = () => {
   return (
     <Section bgColor="bg2" paddingT={40} paddingB={40}>
@@ -52,7 +60,7 @@ const HowSection = () => {
         <HowImage>
           <Image src={WhatImage} alt='what mathking does'/>
         </HowImage>
-        <div style={{ textAlign: 'center' }}>
+        <HowText>
           <HowHeadline>
             <Text type="textMB">
               시간을 어떻게 쓰는지 보다 중요한 건,<br/>
@@ -63,7 +71,7 @@ const HowSection = () => {
             수천만건의 데이터는 자녀분의 시간을 더욱<br/>
             효율적으로 사용할 수 있도록 만들어줍니다.
           </Text>
-        </div>
+        </HowText>
       </HowLayout>
     </Section>
   );
