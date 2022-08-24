@@ -11,7 +11,7 @@ type SectionProps = {
   paddingB?: number,
 };
 
-const SectionContainer = styled.div<SectionProps>`
+export const SectionContainer = styled.section<SectionProps>`
   overflow-x: hidden;
   background-color: ${({ theme, bgColor }) => theme[bgColor]};
   padding: ${(props) => `${props.paddingT}px 20px ${props.paddingB}px`};

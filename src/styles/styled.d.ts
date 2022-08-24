@@ -12,6 +12,8 @@ declare module 'styled-components' {
     highlight: string,
     description: string,
 
+    purpleGradient: string
+
     button: string,
     onButton: string,
   }

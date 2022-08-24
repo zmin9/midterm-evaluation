@@ -12,6 +12,8 @@ const theme: DefaultTheme = {
   highlight: palette.purple2,
   description: palette.gray4,
 
+  purpleGradient: `linear-gradient(${palette.purple2}, ${palette.purple3})`,
+
   button: palette.purple2,
   onButton: palette.white,
 };
