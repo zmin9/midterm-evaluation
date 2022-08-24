@@ -50,7 +50,7 @@ const HowSection = () => {
     <Section bgColor="bg2" paddingT={40} paddingB={40}>
       <HowLayout>
         <HowImage>
-          <Image src={WhatImage}/>
+          <Image src={WhatImage} alt='what mathking does'/>
         </HowImage>
         <div style={{ textAlign: 'center' }}>
           <HowHeadline>

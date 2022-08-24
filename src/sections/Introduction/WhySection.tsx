@@ -1,5 +1,6 @@
 import Section from '../../components/Section';
 import styled from 'styled-components';
+import Video from '../../components/Video';
 
 const VideoContainer = styled.div`
   margin: 24px -2px 0;
@@ -17,7 +18,7 @@ const WhySection = () => {
         {'인공지능 수학 학습앱'}
       </Section.Content>
       <VideoContainer>
-        {/*<Video url="https://www.youtube-nocookie.com/embed/kb2fdVLIkSU"/>*/}
+        <Video url="https://www.youtube-nocookie.com/embed/kb2fdVLIkSU"/>
       </VideoContainer>
     </Section>
   );
