@@ -7,8 +7,11 @@ type TextProps = {
 };
 
 const CustomSpan = styled.span<TextProps>`
-  white-space: pre-wrap;
   ${({ type }) => typography[type]}
+`;
+
+export const Highlight = styled.span`
+  color: ${({ theme }) => theme.highlight};
 `;
 
 const Text = ({ children, type }: PropsWithChildren<TextProps>) => <CustomSpan type={type}>{children}</CustomSpan>;

@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 import Text from './Text';
-import { createContext, PropsWithChildren, useContext } from 'react';
+import { createContext, PropsWithChildren, ReactElement, useContext } from 'react';
+import mediaQuery from '../styles/mediaQuery';
+
+type TextChild = string | ReactElement<HTMLSpanElement>;
 
 type SectionProps = {
   bgColor: BackgroundColorType,
@@ -8,9 +11,15 @@ type SectionProps = {
   paddingB?: number,
 };
 
-const SectionContainer = styled.div<SectionProps>`
+export const SectionContainer = styled.section<SectionProps>`
+  overflow-x: hidden;
   background-color: ${({ theme, bgColor }) => theme[bgColor]};
-  padding: ${(props) => `${props.paddingT}px 40px ${props.paddingB}px`};
+  padding: ${(props) => `${props.paddingT}px 20px ${props.paddingB}px`};
+
+  ${mediaQuery.large} {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
 `;
 
 const SectionSubtitle = styled.span`
@@ -23,13 +32,28 @@ const SectionTitle = styled.h2`
   ${SectionSubtitle} + & {
     margin-top: 4px;
   }
+
+  & > span {
+    width: fit-content;
+    display: block;
+
+    ${mediaQuery.large} {
+      display: inline;
+    }
+  }
 `;
 
 const SectionContent = styled.p`
   color: ${({ theme }) => theme.text1};
+  margin-top: 12px;
 
-  ${SectionTitle} + & {
-    margin-top: 12px;
+  & > span {
+    width: fit-content;
+    display: block;
+
+    ${mediaQuery.large} {
+      display: inline;
+    }
   }
 `;
 
@@ -57,15 +81,33 @@ const Section = ({ children, bgColor = 'bg1', paddingT = 0, paddingB = 0 }: Prop
   );
 };
 
-function Card({ children }: PropsWithChildren) {
+Section.Subtitle = ({ children }: { children: string }) => <SectionSubtitle><Text
+  type="textSR">{children}</Text></SectionSubtitle>;
+Section.Title = ({ children }: { children: TextChild[] | TextChild }) => (
+  <SectionTitle>
+    {
+      Array.isArray(children) ?
+        children.map((child) => <Text key={String(child)} type="H3">{child}</Text>)
+        :
+        <Text key={String(children)} type="H3">{children}</Text>
+    }
+  </SectionTitle>
+);
+Section.Content = ({ children }: { children: TextChild[] | TextChild }) => (
+  <SectionContent>
+    {
+      Array.isArray(children) ?
+        children.map((child) => <Text key={String(child)} type="textSR">{child}</Text>)
+        :
+        <Text key={String(children)} type="textSR">{children}</Text>
+    }
+  </SectionContent>
+);
+
+Section.Card = ({ children }: PropsWithChildren) => {
   const ctx = useContext(BgContext);
   return <SectionCard bgColor={ctx === 'bg1' ? 'bg2' : 'bg1'}>{children}</SectionCard>;
-}
-
-Section.Subtitle = ({ text }: { text: string }) => <SectionSubtitle><Text type="textSR">{text}</Text></SectionSubtitle>;
-Section.Title = ({ text }: { text: string }) => <SectionTitle><Text type="H3">{text}</Text></SectionTitle>;
-Section.Content = ({ text }: { text: string }) => <SectionContent><Text type="textSR">{text}</Text></SectionContent>;
-Section.Card = Card;
+};
 
 
 export default Section;
