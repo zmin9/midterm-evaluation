@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import Text from './Text';
 import { createContext, PropsWithChildren, useContext } from 'react';
+import mediaQuery from '../styles/mediaQuery';
 
 type SectionProps = {
   bgColor: BackgroundColorType,
@@ -10,7 +11,12 @@ type SectionProps = {
 
 const SectionContainer = styled.div<SectionProps>`
   background-color: ${({ theme, bgColor }) => theme[bgColor]};
-  padding: ${(props) => `${props.paddingT}px 40px ${props.paddingB}px`};
+  padding: ${(props) => `${props.paddingT}px 20px ${props.paddingB}px`};
+
+  ${mediaQuery.large} {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
 `;
 
 const SectionSubtitle = styled.span`
@@ -19,9 +25,16 @@ const SectionSubtitle = styled.span`
 
 const SectionTitle = styled.h2`
   color: ${({ theme }) => theme.headline};
-
+  
   ${SectionSubtitle} + & {
     margin-top: 4px;
+  }
+
+  & > span {
+    display: block;
+    ${mediaQuery.large} {
+      display: inline;
+    }
   }
 `;
 
@@ -30,6 +43,13 @@ const SectionContent = styled.p`
 
   ${SectionTitle} + & {
     margin-top: 12px;
+  }
+
+  & > span {
+    display: block;
+    ${mediaQuery.large} {
+      display: inline;
+    }
   }
 `;
 
@@ -63,8 +83,20 @@ function Card({ children }: PropsWithChildren) {
 }
 
 Section.Subtitle = ({ text }: { text: string }) => <SectionSubtitle><Text type="textSR">{text}</Text></SectionSubtitle>;
-Section.Title = ({ text }: { text: string }) => <SectionTitle><Text type="H3">{text}</Text></SectionTitle>;
-Section.Content = ({ text }: { text: string }) => <SectionContent><Text type="textSR">{text}</Text></SectionContent>;
+Section.Title = ({ texts }: { texts: string[] }) => (
+  <SectionTitle>
+    {
+      texts.map((text) => <Text key={text} type="H3">{text}</Text>)
+    }
+  </SectionTitle>
+);
+Section.Content = ({ texts }: { texts: string[] }) => (
+  <SectionContent>
+    {
+      texts.map((text) => <Text key={text} type="textSR">{text}</Text>)
+    }
+  </SectionContent>
+);
 Section.Card = Card;
 
 

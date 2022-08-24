@@ -41,12 +41,16 @@ const Header = () => {
     <PageHeader>
       <HeaderTitle>
         <Text type='H1'>
-          {'자녀분 공부는\n수학대왕이 시킬게요'}
+          자녀분 공부는
+        </Text>
+        <br/>
+        <Text type='H1'>
+          수학대왕이 시킬게요
         </Text>
       </HeaderTitle>
       <HeaderSubTitle>
         <Text type='textMR'>
-          {'50만명이 선택한 인공지능 수학'}
+          50만명이 선택한 인공지능 수학
         </Text>
       </HeaderSubTitle>
     </PageHeader>
