@@ -27,7 +27,7 @@ const WhoSection = () => {
         </a>
       </Section.Content>
       <Section.Card>
-        <Image alt="store-1st-app" src={Store1stImageS}/>
+        <Image src={Store1stImageS} alt="store-1st-app"/>
       </Section.Card>
     </Section>
   );

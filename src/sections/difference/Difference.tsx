@@ -31,7 +31,7 @@ const Difference = () => {
           <Section.Title>{diff.title}</Section.Title>
           <Section.Content>{diff.description}</Section.Content>
           <Section.Card>
-            <GraphImage src={diff.graphImg}/>
+            <GraphImage src={diff.graphImg} alt={`difference graph ${idx + 1}`}/>
           </Section.Card>
         </Section>
       ))}

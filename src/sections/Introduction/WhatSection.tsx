@@ -33,7 +33,7 @@ const WhatSection = () => {
           누적된 데이터를 통해 증명된 자녀의 성적 향상
         </Section.Content>
         <Section.Card>
-          <Image src={ImprovingGraphS}/>
+          <Image src={ImprovingGraphS} alt='improving graph'/>
         </Section.Card>
         <GraphDescription>
           *6개월간의 누적 데이터를 기준으로 산출됨
