@@ -6,10 +6,11 @@ const theme: DefaultTheme = {
   bg2: palette.gray1,
 
   headline: palette.black,
-  text1: palette.gray4,
+  text1: palette.gray5,
   text2: palette.gray3,
   text3: palette.gray2,
   highlight: palette.purple2,
+  description: palette.gray4,
 
   button: palette.purple2,
   onButton: palette.white,

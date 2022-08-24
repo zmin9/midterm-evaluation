@@ -1,10 +1,10 @@
 import Section from '../components/Section';
 import Store1stImageS from '../statics/store-1st-small.png';
 import WhatImage from '../statics/what-mathking-does.png';
+import ImprovingGraphS from '../statics/improving-graph-small.png';
 import styled from 'styled-components';
 import Text from '../components/Text';
 import mediaQuery from '../styles/mediaQuery';
-import Video from '../components/Video';
 
 const Image = styled.img`
   width: 100%;
@@ -31,6 +31,21 @@ const WhatMathKingDoesLayout = styled.span`
     flex: 1 1 0;
   }
 `;
+
+const GraphDescription = styled.div`
+  margin-top: 16px;
+  color: ${({ theme }) => theme.description};
+  text-align: center;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+
+  div {
+    font-size: 10px;
+    line-height: 15px;
+  }
+`;
+
 const WhatMathKingDoesHeadline = styled.h3`
   margin-bottom: 24px;
 
@@ -46,6 +61,7 @@ const WhatMathKingDoesImage = styled.div`
 
   ${mediaQuery.large} {
     margin: 0;
+
     img {
       width: auto;
       height: 280px;
@@ -58,6 +74,7 @@ const InfoSections = () => {
   return (
     <>
       <Section bgColor="bg1" paddingT={60}>
+        {/*TODO responsive*/}
         <Section.Title>
           {'국내 교육 1위 '}
           <span>
@@ -73,7 +90,7 @@ const InfoSections = () => {
           </a>
         </Section.Content>
         <Section.Card>
-          <Image alt="store-1st-app" src={Store1stImageS} />
+          <Image alt="store-1st-app" src={Store1stImageS}/>
         </Section.Card>
       </Section>
       <Section bgColor="bg1" paddingT={60} paddingB={20}>
@@ -86,7 +103,7 @@ const InfoSections = () => {
           {'인공지능 수학 학습앱'}
         </Section.Content>
         <VideoContainer>
-          <Video url="https://www.youtube-nocookie.com/embed/kb2fdVLIkSU"/>
+          {/*<Video url="https://www.youtube-nocookie.com/embed/kb2fdVLIkSU"/>*/}
         </VideoContainer>
       </Section>
       <Section bgColor="bg2" paddingT={40} paddingB={40}>
@@ -107,6 +124,25 @@ const InfoSections = () => {
             </Text>
           </div>
         </WhatMathKingDoesLayout>
+      </Section>
+      <Section bgColor="bg1" paddingT={60} paddingB={40}>
+        {/*TODO responsive*/}
+        <Section.Title>
+          {'데이터로 검증된 '}
+          {'성적향상'}
+        </Section.Title>
+        <Section.Content>
+          누적된 데이터를 통해 증명된 자녀의 성적 향상
+        </Section.Content>
+        <Section.Card>
+          <Image src={ImprovingGraphS}/>
+        </Section.Card>
+        <GraphDescription>
+          *6개월간의 누적 데이터를 기준으로 산출됨
+          <div>
+            (2021-04-01 ~ 09-30)
+          </div>
+        </GraphDescription>
       </Section>
     </>
   );

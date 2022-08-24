@@ -10,6 +10,7 @@ declare module 'styled-components' {
     text2: string,
     text3: string,
     highlight: string,
+    description: string,
 
     button: string,
     onButton: string,
