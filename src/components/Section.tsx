@@ -12,6 +12,7 @@ type SectionProps = {
 };
 
 const SectionContainer = styled.div<SectionProps>`
+  overflow-x: hidden;
   background-color: ${({ theme, bgColor }) => theme[bgColor]};
   padding: ${(props) => `${props.paddingT}px 20px ${props.paddingB}px`};
 
