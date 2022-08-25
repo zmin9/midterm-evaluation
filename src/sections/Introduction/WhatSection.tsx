@@ -2,7 +2,7 @@ import Section from '../../components/Section';
 import ImprovingGraphS from '../../statics/improving-graph-small.png';
 import ImprovingGraphL from '../../statics/improving-graph-large.png';
 import styled from 'styled-components';
-import ImagesByMediaQuery from '../../components/ImagesByMediaQuery';
+import ImagesByMediaQuery from '../../components/image/ImagesByMediaQuery';
 
 const GraphDescription = styled.div`
   margin-top: 16px;

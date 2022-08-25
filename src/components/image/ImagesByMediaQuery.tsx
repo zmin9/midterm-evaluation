@@ -8,7 +8,7 @@ const ImagesByMediaQuery = ({ small, large, alt }: ImagesProps) => {
   return (
     <picture>
       <source srcSet={large} media="(min-width: 1024px)"/>
-      <img src={small} alt={alt} width='100%'/>
+      <img src={small} alt={alt} width="100%" style={{ display: 'block' }}/>
     </picture>
   );
 };
