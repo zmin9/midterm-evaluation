@@ -1,5 +1,5 @@
 import Section from '../../components/Section';
-import { Highlight } from '../../components/Text';
+import { Highlight } from '../../components/Typo';
 import Store1stImageS from '../../statics/store-1st-small.png';
 import Store1stImageL from '../../statics/store-1st-large.png';
 import ImageByMediaQuery from '../../components/ImageByMediaQuery';

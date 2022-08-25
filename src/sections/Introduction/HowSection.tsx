@@ -1,5 +1,5 @@
 import WhatImage from '../../statics/what-mathking-does.png';
-import Text, { Highlight } from '../../components/Text';
+import Typo, { Highlight } from '../../components/Typo';
 import Section from '../../components/Section';
 import mediaQuery from '../../styles/mediaQuery';
 import styled from 'styled-components';
@@ -62,15 +62,15 @@ const HowSection = () => {
         </HowImage>
         <HowText>
           <HowHeadline>
-            <Text type="textMB">
+            <Typo type="textMB">
               시간을 어떻게 쓰는지 보다 중요한 건,<br/>
               시간을 <Highlight>어떻게</Highlight> 쓰느냐입니다.
-            </Text>
+            </Typo>
           </HowHeadline>
-          <Text type="textMR">
+          <Typo type="textMR">
             수천만건의 데이터는 자녀분의 시간을 더욱<br/>
             효율적으로 사용할 수 있도록 만들어줍니다.
-          </Text>
+          </Typo>
         </HowText>
       </HowLayout>
     </Section>

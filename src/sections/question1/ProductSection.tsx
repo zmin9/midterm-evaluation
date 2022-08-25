@@ -1,4 +1,4 @@
-import Text, { Highlight } from '../../components/Text';
+import Typo, { Highlight } from '../../components/Typo';
 import Section from '../../components/Section';
 import mediaQuery from '../../styles/mediaQuery';
 import styled from 'styled-components';
@@ -96,7 +96,7 @@ const Products = () => {
         {
           products.map((item) => (
             <ProductionItem key={item.title}>
-              <Text type="textSR">
+              <Typo type="textSR">
                 <ItemText>
                   <ItemTitle>
                     {item.title}
@@ -105,7 +105,7 @@ const Products = () => {
                     {item.description}
                   </ItemDesc>
                 </ItemText>
-              </Text>
+              </Typo>
               <ItemImgContainer imgBgColor={item.imgBgColor}>
                 <img src={item.img} alt={item.title + '_icon'}/>
               </ItemImgContainer>
@@ -114,14 +114,14 @@ const Products = () => {
         }
       </Productions>
       <ProductionText>
-        <Text type="textMB">
+        <Typo type="textMB">
           {'이 모든 구성이 수학대왕 '}
           <Highlight>프리미엄</Highlight>
           {'에 '}
-        </Text>
-        <Text type="textMB">
+        </Typo>
+        <Typo type="textMB">
           포함되어 있습니다.
-        </Text>
+        </Typo>
       </ProductionText>
     </Section>
   );

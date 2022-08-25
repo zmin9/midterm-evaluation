@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Text from './Text';
+import Typo from './Typo';
 import { ReviewInfo } from '../data/review';
 
 const Card = styled.div`
@@ -27,10 +27,10 @@ const ReviewCard = ({ img, imgBgColor, age, lastName, content }: ReviewInfo) => 
     <Card>
       <ReviewerProfile imgBgColor={imgBgColor}>
         <img src={img} alt={`profile_image_${lastName}`}/>
-        <Text type="textSR">{age}</Text>
-        <Text type="textSB">{`\0 ${lastName}OO 학생`}</Text>
+        <Typo type="textSR">{age}</Typo>
+        <Typo type="textSB">{`\0 ${lastName}OO 학생`}</Typo>
       </ReviewerProfile>
-      <Text type="textSR">{content}</Text>
+      <Typo type="textSR">{content}</Typo>
     </Card>
   );
 };
