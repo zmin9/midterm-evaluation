@@ -1,11 +1,8 @@
 import Section from '../../components/Section';
 import ImprovingGraphS from '../../statics/improving-graph-small.png';
+import ImprovingGraphL from '../../statics/improving-graph-large.png';
 import styled from 'styled-components';
-
-const Image = styled.img`
-  width: 100%;
-  border-radius: 5px;
-`;
+import ImageByMediaQuery from '../../components/ImageByMediaQuery';
 
 const GraphDescription = styled.div`
   margin-top: 16px;
@@ -33,7 +30,7 @@ const WhatSection = () => {
           누적된 데이터를 통해 증명된 자녀의 성적 향상
         </Section.Content>
         <Section.Card>
-          <Image src={ImprovingGraphS} alt='improving graph'/>
+          <ImageByMediaQuery small={ImprovingGraphS} large={ImprovingGraphL} alt='improving graph'/>
         </Section.Card>
         <GraphDescription>
           *6개월간의 누적 데이터를 기준으로 산출됨
