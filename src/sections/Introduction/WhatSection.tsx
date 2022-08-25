@@ -9,6 +9,7 @@ const GraphDescription = styled.div`
   margin-top: 16px;
   color: ${({ theme }) => theme.description};
   text-align: center;
+  vertical-align: baseline;
   font-weight: 400;
   font-size: 12px;
   line-height: 18px;
@@ -41,8 +42,8 @@ const WhatSection = () => {
       <GraphDescription>
         {'*6개월간의 누적 데이터를 기준으로 산출됨\n'}
         <span>
-            (2021-04-01월 ~ 09-30)
-          </span>
+          (2021-04-01월 ~ 09-30)
+        </span>
       </GraphDescription>
     </Section>
   );

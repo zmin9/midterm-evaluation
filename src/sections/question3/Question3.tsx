@@ -35,7 +35,7 @@ const Question3 = () => {
         </AchievementText>
       </Section>
       <Section bgColor="bg1" paddingT={60} paddingB={60}>
-        <Section.Subtitle>선순환 구조를 통한 성</Section.Subtitle>
+        <Section.Subtitle>선순환 구조를 통한 성장</Section.Subtitle>
         <Section.Title>더 많은 학습, 더 빠른 성적 향상</Section.Title>
         <Section.Content>
           {'수학에 재미를 느끼고 자발적 학습시간이 증가'}

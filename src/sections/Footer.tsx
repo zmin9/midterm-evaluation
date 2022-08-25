@@ -1,9 +1,14 @@
 import Typo from '../components/Typo';
 import styled from 'styled-components';
+import mediaQuery from '../styles/mediaQuery';
 
 const FooterContainer = styled.footer`
   background-color: ${({ theme }) => theme.bg1};
   padding: 60px 20px;
+  ${mediaQuery.large}{
+    padding-right: 40px;
+    padding-left: 40px;
+  }
 `;
 
 const CompanyName = styled.div`
@@ -11,13 +16,14 @@ const CompanyName = styled.div`
 `;
 
 const CompanyAddress = styled.div`
+  white-space: pre-wrap;
   margin-top: 4px;
   color: ${({ theme }) => theme.headline};
 `;
 
 const CompanyMores = styled.div`
   color: ${({ theme }) => theme.text2};
-  margin-top: 16px;
+  margin-top: 16px;   
 
   * + * {
     margin-left: 16px;
@@ -38,9 +44,7 @@ const Footer = () => {
       </CompanyName>
       <CompanyAddress>
         <Typo type="textXSR">
-          사업자등록번호 : 809-87-01523<br/>
-          통신판매업 : 2019-서울강남-04112호<br/>
-          주소 : 서울특별시 강남구 삼성로 508, 1804호 (삼성동)<br/>
+          {'사업자등록번호 : 809-87-01523\n통신판매업 : 2019-서울강남-04112호\n주소 : 서울특별시 강남구 삼성로 508, 1804호 (삼성동)'}
         </Typo>
       </CompanyAddress>
       <CompanyMores>
