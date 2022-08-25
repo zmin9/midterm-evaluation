@@ -30,7 +30,7 @@ const WhatSection = () => {
     <Section bgColor="bg1" paddingT={60} paddingB={40}>
       <Section.Title>
         {'데이터로 검증된 \n'}
-        {'성적향상'}
+        {'성적 향상'}
       </Section.Title>
       <Section.Content>
         누적된 데이터를 통해 증명된 자녀의 성적 향상
