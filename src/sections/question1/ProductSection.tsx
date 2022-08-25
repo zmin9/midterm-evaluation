@@ -80,12 +80,9 @@ const ProductionText = styled.h3`
   color: ${({ theme }) => theme.text2};
   margin-top: 60px;
 
-  & > * {
-    display: block;
-
-    ${mediaQuery.large} {
-      display: inline;
-    }
+  white-space: pre-wrap;
+  ${mediaQuery.large}{
+    white-space: normal;
   }
 `;
 
@@ -113,16 +110,14 @@ const Products = () => {
           ))
         }
       </Productions>
-      <ProductionText>
-        <Typo type="textMB">
+      <Typo type="textMB">
+        <ProductionText>
           {'이 모든 구성이 수학대왕 '}
           <Highlight>프리미엄</Highlight>
-          {'에 '}
-        </Typo>
-        <Typo type="textMB">
+          {'에 \n'}
           포함되어 있습니다.
-        </Typo>
-      </ProductionText>
+        </ProductionText>
+      </Typo>
     </Section>
   );
 };

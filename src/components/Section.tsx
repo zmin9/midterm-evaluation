@@ -1,9 +1,7 @@
 import styled from 'styled-components';
 import Typo from './Typo';
-import { createContext, PropsWithChildren, ReactElement, useContext } from 'react';
+import { createContext, PropsWithChildren, useContext } from 'react';
 import mediaQuery from '../styles/mediaQuery';
-
-type TextChild = string | ReactElement<HTMLSpanElement>;
 
 type SectionProps = {
   bgColor: BackgroundColorType,
@@ -32,14 +30,10 @@ const SectionTitle = styled.h2`
   ${SectionSubtitle} + & {
     margin-top: 4px;
   }
-
-  & > span {
-    width: fit-content;
-    display: block;
-
-    ${mediaQuery.large} {
-      display: inline;
-    }
+  
+  white-space: pre-wrap;
+  ${mediaQuery.large} {
+    white-space: normal;
   }
 `;
 
@@ -47,13 +41,9 @@ const SectionContent = styled.p`
   color: ${({ theme }) => theme.text1};
   margin-top: 12px;
 
-  & > span {
-    width: fit-content;
-    display: block;
-
-    ${mediaQuery.large} {
-      display: inline;
-    }
+  white-space: pre-wrap;
+  ${mediaQuery.large} {
+    white-space: normal;
   }
 `;
 
@@ -81,26 +71,21 @@ const Section = ({ children, bgColor = 'bg1', paddingT = 0, paddingB = 0 }: Prop
   );
 };
 
-Section.Subtitle = ({ children }: { children: string }) => <SectionSubtitle><Typo
-  type="textSR">{children}</Typo></SectionSubtitle>;
-Section.Title = ({ children }: { children: TextChild[] | TextChild }) => (
+Section.Subtitle = ({ children }: PropsWithChildren) => (
+  <SectionSubtitle>
+    <Typo type="textSR">
+      {children}
+    </Typo>
+  </SectionSubtitle>
+);
+Section.Title = ({ children }: PropsWithChildren) => (
   <SectionTitle>
-    {
-      Array.isArray(children) ?
-        children.map((child) => <Typo key={String(child)} type="H3">{child}</Typo>)
-        :
-        <Typo key={String(children)} type="H3">{children}</Typo>
-    }
+    <Typo type="H3">{children}</Typo>
   </SectionTitle>
 );
-Section.Content = ({ children }: { children: TextChild[] | TextChild }) => (
+Section.Content = ({ children }: PropsWithChildren) => (
   <SectionContent>
-    {
-      Array.isArray(children) ?
-        children.map((child) => <Typo key={String(child)} type="textSR">{child}</Typo>)
-        :
-        <Typo key={String(children)} type="textSR">{children}</Typo>
-    }
+    <Typo type="textSR">{children}</Typo>
   </SectionContent>
 );
 

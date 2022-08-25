@@ -1,6 +1,6 @@
 import Section from '../../components/Section';
 import QuestionBox from '../../components/QuestionBox';
-import Typo, { Highlight } from '../../components/Typo';
+import { Highlight } from '../../components/Typo';
 import NaverPay from '../../statics/naver-pay.png';
 import StoreBenefitGraph from '../../statics/store_benefit_graph.png';
 import styled from 'styled-components';
@@ -30,8 +30,8 @@ const Question2 = () => {
     <>
       <Section bgColor="bg2" paddingT={60}>
         <QuestionBox>
-          <Typo type="H1">수학대왕 <Highlight>프리미엄</Highlight>{'은 '}</Typo>
-          <Typo type="H1">왜 다른가요?</Typo>
+          {'수학대왕 '}<Highlight>프리미엄</Highlight>{'은 \n'}
+          {'왜 다른가요?'}
         </QuestionBox>
       </Section>
       <Section bgColor="bg2" paddingT={60} paddingB={60}>

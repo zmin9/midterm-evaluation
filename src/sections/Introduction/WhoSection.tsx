@@ -9,13 +9,11 @@ const WhoSection = () => {
     <Section bgColor="bg1" paddingT={60}>
       {/*TODO responsive*/}
       <Section.Title>
-        {'국내 교육 1위 '}
-        <span>
-          {'인공지능 학습앱 '}
-          <Highlight>
-            수학대왕
-            </Highlight>
-          </span>
+        {'국내 교육 1위 \n'}
+        {'인공지능 학습앱 '}
+        <Highlight>
+          수학대왕
+        </Highlight>
       </Section.Title>
       <Section.Content>
         <a href="https://platum.kr/archives/171236">
@@ -23,7 +21,7 @@ const WhoSection = () => {
         </a>
       </Section.Content>
       <Section.Card>
-        <ImagesByMediaQuery small={Store1stImageS} large={Store1stImageL} alt='store-1st-app'/>
+        <ImagesByMediaQuery small={Store1stImageS} large={Store1stImageL} alt="store-1st-app"/>
       </Section.Card>
     </Section>
   );

@@ -19,8 +19,8 @@ const Question3 = () => {
     <>
       <Section bgColor="bg2">
         <QuestionBox>
-          <Typo type="H1">왜 <Highlight>학습량</Highlight>{'에 따라 '}</Typo>
-          <Typo type="H1">환급을 하나요?</Typo>
+          {'왜 '}<Highlight>학습량</Highlight>{'에 따라 \n'}
+          {'환급을 하나요?'}
         </QuestionBox>
       </Section>
       <Section bgColor="bg2" paddingT={24} paddingB={60}>

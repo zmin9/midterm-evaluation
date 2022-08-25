@@ -32,7 +32,10 @@ const ResponseButton = styled.button`
 const PayPremium = () => {
   return (
     <Section bgColor="bg2" paddingT={60} paddingB={40}>
-      <Section.Title>귀하의 자녀가 학습을 결심하고 결제를 요청하고 있습니다.</Section.Title>
+      <Section.Title>
+        {'귀하의 자녀가 학습을 결심하고 \n'}
+        {'결제를 요청하고 있습니다.'}
+      </Section.Title>
       <ImageContainer>
         <ImageWithStretchedBg src={KakaoTalk} alt="프리미엄 결제 요청 알림톡" height='327px'/>
       </ImageContainer>

@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import mediaQuery from '../styles/mediaQuery';
 import QLogo from '../statics/Q.png';
 import { PropsWithChildren } from 'react';
+import Typo from './Typo';
 
 const Container = styled.div`
   border-radius: 5px;
@@ -17,13 +18,10 @@ const Container = styled.div`
 `;
 
 const Question = styled.h1`
-  & > span {
-    width: fit-content;
-    display: block;
+  white-space: pre-wrap;
 
-    ${mediaQuery.large} {
-      display: inline;
-    }
+  ${mediaQuery.large} {
+    white-space: normal;
   }
 `;
 
@@ -31,9 +29,11 @@ const QuestionBox = ({ children }: PropsWithChildren) => {
   return (
     <Container>
       <Question>
-        {children}
+        <Typo type="H1">
+          {children}
+        </Typo>
       </Question>
-      <img alt='question' src={QLogo} height="100%"/>
+      <img alt="question" src={QLogo} height="100%"/>
     </Container>
   );
 };
