@@ -5,6 +5,9 @@ import NaverPay from '../../statics/naver-pay.png';
 import StoreBenefitGraph from '../../statics/store_benefit_graph.png';
 import styled from 'styled-components';
 import mediaQuery from '../../styles/mediaQuery';
+import ImageByMediaQuery from '../../components/ImageByMediaQuery';
+import DifferentRefundS from '../../statics/different-refund-small.png';
+import DifferentRefundL from '../../statics/different-refund-large.png';
 
 const ImageContainer = styled.div`
   display: flex;
@@ -26,6 +29,12 @@ const RefundGraphSection = styled.section`
   }
 `;
 
+const ResponsivePadding = styled.div`
+  ${mediaQuery.large}{
+    padding: 0 130px;
+  }
+`;
+
 const Question2 = () => {
   return (
     <>
@@ -44,8 +53,13 @@ const Question2 = () => {
         </ImageContainer>
       </Section>
       <RefundGraphSection>
-        <img src={StoreBenefitGraph} width="100%" alt={'공부할 수록 쌓이는 환급'}/>
+        <img src={StoreBenefitGraph} width="100%" alt='공부할 수록 쌓이는 환급'/>
       </RefundGraphSection>
+      <Section bgColor='bg2' paddingT={60} paddingB={60}>
+        <ResponsivePadding>
+          <ImageByMediaQuery small={DifferentRefundS} large={DifferentRefundL} alt='타 서비스와 달리 공부하면 환급하는 수학대왕'/>
+        </ResponsivePadding>
+      </Section>
     </>
   );
 };
