@@ -3,14 +3,14 @@ import Video from '../statics/3d_video.png';
 import Money from '../statics/3d_money.png';
 import Test from '../statics/3d_test.png';
 
-export type Production = {
+export type Product = {
   title: string,
   description: string,
   imgBgColor: string,
   img: string
 };
 
-const production : Production[] = [
+const products : Product[] = [
   {
     title: '다양한 문제',
     description: '문제집 200권 이상의 분량\n수준 높은 수학 콘텐츠',
@@ -37,4 +37,4 @@ const production : Production[] = [
   }
 ];
 
-export default production;
+export default products;
