@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import BgImg from '../statics/headerImg.png';
 import mediaQuery from '../styles/mediaQuery';
-import Text from '../components/Text';
+import Typo from '../components/Typo';
 
 const PageHeader = styled.header`
   color: ${({ theme }) => theme.bg1};
@@ -40,18 +40,18 @@ const Header = () => {
   return (
     <PageHeader>
       <HeaderTitle>
-        <Text type='H1'>
+        <Typo type='H1'>
           자녀분 공부는
-        </Text>
+        </Typo>
         <br/>
-        <Text type='H1'>
+        <Typo type='H1'>
           수학대왕이 시킬게요
-        </Text>
+        </Typo>
       </HeaderTitle>
       <HeaderSubTitle>
-        <Text type='textMR'>
+        <Typo type='textMR'>
           50만명이 선택한 인공지능 수학
-        </Text>
+        </Typo>
       </HeaderSubTitle>
     </PageHeader>
   );

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Text from './Text';
+import Typo from './Typo';
 import { createContext, PropsWithChildren, ReactElement, useContext } from 'react';
 import mediaQuery from '../styles/mediaQuery';
 
@@ -81,15 +81,15 @@ const Section = ({ children, bgColor = 'bg1', paddingT = 0, paddingB = 0 }: Prop
   );
 };
 
-Section.Subtitle = ({ children }: { children: string }) => <SectionSubtitle><Text
-  type="textSR">{children}</Text></SectionSubtitle>;
+Section.Subtitle = ({ children }: { children: string }) => <SectionSubtitle><Typo
+  type="textSR">{children}</Typo></SectionSubtitle>;
 Section.Title = ({ children }: { children: TextChild[] | TextChild }) => (
   <SectionTitle>
     {
       Array.isArray(children) ?
-        children.map((child) => <Text key={String(child)} type="H3">{child}</Text>)
+        children.map((child) => <Typo key={String(child)} type="H3">{child}</Typo>)
         :
-        <Text key={String(children)} type="H3">{children}</Text>
+        <Typo key={String(children)} type="H3">{children}</Typo>
     }
   </SectionTitle>
 );
@@ -97,9 +97,9 @@ Section.Content = ({ children }: { children: TextChild[] | TextChild }) => (
   <SectionContent>
     {
       Array.isArray(children) ?
-        children.map((child) => <Text key={String(child)} type="textSR">{child}</Text>)
+        children.map((child) => <Typo key={String(child)} type="textSR">{child}</Typo>)
         :
-        <Text key={String(children)} type="textSR">{children}</Text>
+        <Typo key={String(children)} type="textSR">{children}</Typo>
     }
   </SectionContent>
 );

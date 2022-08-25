@@ -1,11 +1,11 @@
 import Section from '../../components/Section';
 import QuestionBox from '../../components/QuestionBox';
-import Text, { Highlight } from '../../components/Text';
+import Typo, { Highlight } from '../../components/Typo';
 import NaverPay from '../../statics/naver-pay.png';
 import StoreBenefitGraph from '../../statics/store_benefit_graph.png';
 import styled from 'styled-components';
 import mediaQuery from '../../styles/mediaQuery';
-import ImageByMediaQuery from '../../components/ImageByMediaQuery';
+import ImagesByMediaQuery from '../../components/ImagesByMediaQuery';
 import DifferentRefundS from '../../statics/different-refund-small.png';
 import DifferentRefundL from '../../statics/different-refund-large.png';
 
@@ -40,8 +40,8 @@ const Question2 = () => {
     <>
       <Section bgColor="bg2" paddingT={60}>
         <QuestionBox>
-          <Text type="H1">수학대왕 <Highlight>프리미엄</Highlight>{'은 '}</Text>
-          <Text type="H1">왜 다른가요?</Text>
+          <Typo type="H1">수학대왕 <Highlight>프리미엄</Highlight>{'은 '}</Typo>
+          <Typo type="H1">왜 다른가요?</Typo>
         </QuestionBox>
       </Section>
       <Section bgColor="bg2" paddingT={60} paddingB={60}>
@@ -57,7 +57,7 @@ const Question2 = () => {
       </RefundGraphSection>
       <Section bgColor='bg2' paddingT={60} paddingB={60}>
         <ResponsivePadding>
-          <ImageByMediaQuery small={DifferentRefundS} large={DifferentRefundL} alt='타 서비스와 달리 공부하면 환급하는 수학대왕'/>
+          <ImagesByMediaQuery small={DifferentRefundS} large={DifferentRefundL} alt='타 서비스와 달리 공부하면 환급하는 수학대왕'/>
         </ResponsivePadding>
       </Section>
     </>

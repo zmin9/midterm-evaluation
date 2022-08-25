@@ -1,5 +1,5 @@
 import React from 'react';
-import Text from './components/Text';
+import Typo from './components/Typo';
 import Section from './components/Section';
 // import Video from './components/Video';
 import ReviewCard from './components/ReviewCard';
@@ -7,10 +7,10 @@ import ReviewCard from './components/ReviewCard';
 const StoryBook = () => {
   return (
     <>
-      <Text type='H1'>H1</Text><br/>
-      <Text type='H3'>H3</Text><br/>
-      <Text type='textLB'>text Large Bold</Text><br/>
-      <Text type='textMR'>text Medium Regular</Text><br/>
+      <Typo type='H1'>H1</Typo><br/>
+      <Typo type='H3'>H3</Typo><br/>
+      <Typo type='textLB'>text Large Bold</Typo><br/>
+      <Typo type='textMR'>text Medium Regular</Typo><br/>
       <Section bgColor="bg2" paddingT={60} paddingB={40}>
         <Section.Subtitle>
           선순환 구조를 통한 성장

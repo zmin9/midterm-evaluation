@@ -14,6 +14,6 @@ export const Highlight = styled.span`
   color: ${({ theme }) => theme.highlight};
 `;
 
-const Text = ({ children, type }: PropsWithChildren<TextProps>) => <CustomSpan type={type}>{children}</CustomSpan>;
+const Typo = ({ children, type }: PropsWithChildren<TextProps>) => <CustomSpan type={type}>{children}</CustomSpan>;
 
-export default Text;
+export default Typo;

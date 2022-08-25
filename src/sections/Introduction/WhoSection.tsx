@@ -1,8 +1,8 @@
 import Section from '../../components/Section';
-import { Highlight } from '../../components/Text';
+import { Highlight } from '../../components/Typo';
 import Store1stImageS from '../../statics/store-1st-small.png';
 import Store1stImageL from '../../statics/store-1st-large.png';
-import ImageByMediaQuery from '../../components/ImageByMediaQuery';
+import ImagesByMediaQuery from '../../components/ImagesByMediaQuery';
 
 const WhoSection = () => {
   return (
@@ -23,7 +23,7 @@ const WhoSection = () => {
         </a>
       </Section.Content>
       <Section.Card>
-        <ImageByMediaQuery small={Store1stImageS} large={Store1stImageL} alt='store-1st-app'/>
+        <ImagesByMediaQuery small={Store1stImageS} large={Store1stImageL} alt='store-1st-app'/>
       </Section.Card>
     </Section>
   );
