@@ -23,7 +23,11 @@ const GlobalStyle = createGlobalStyle`
 
   a {
     -webkit-text-decoration-color: currentColor;
+    
     text-decoration: underline;
+    :link {
+      color: currentColor;
+    }
     :visited {
       color: currentColor;
     }
