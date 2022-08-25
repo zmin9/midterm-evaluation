@@ -4,7 +4,7 @@ import mediaQuery from '../../styles/mediaQuery';
 import differenceWithOthers from '../../data/differenceWithOthers';
 import QuestionBox from '../../components/QuestionBox';
 import Text, { Highlight } from '../../components/Text';
-
+import Products from './ProductSection';
 
 const GraphImage = styled.img`
   width: 100%;
@@ -19,7 +19,7 @@ const GraphImage = styled.img`
 const Difference = () => {
   return (
     <>
-      <Section bgColor='bg2' paddingT={60}>
+      <Section bgColor="bg2" paddingT={60}>
         <QuestionBox>
           <Text type="H1">수학대왕 <Highlight>프리미엄</Highlight>{'은 '}</Text>
           <Text type="H1">무엇이 다른가요?</Text>
@@ -35,6 +35,7 @@ const Difference = () => {
           </Section.Card>
         </Section>
       ))}
+      <Products/>
     </>
   );
 };

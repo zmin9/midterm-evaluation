@@ -4,6 +4,7 @@ import theme from './styles/theme';
 import Header from './sections/Header';
 import Introduction from './sections/Introduction/Introduction';
 import Difference from './sections/difference/Difference';
+import Footer from './sections/Footer';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Header/>
         <Introduction/>
         <Difference/>
+        <Footer/>
       </ThemeProvider>
     </>
   );
