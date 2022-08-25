@@ -79,16 +79,18 @@ const ProductionText = styled.h3`
   text-align: center;
   color: ${({ theme }) => theme.text2};
   margin-top: 60px;
+  margin-bottom: 80px;
 
   white-space: pre-wrap;
   ${mediaQuery.large}{
     white-space: normal;
+    margin-bottom: 60px;
   }
 `;
 
 const Products = () => {
   return (
-    <Section bgColor="bg1" paddingT={60} paddingB={80}>
+    <Section bgColor="bg1" paddingT={60}>
       <Productions>
         {
           products.map((item) => (
