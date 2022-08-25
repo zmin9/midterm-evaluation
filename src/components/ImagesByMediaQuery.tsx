@@ -4,7 +4,7 @@ type ImagesProps = {
   alt: string
 };
 
-const ImageByMediaQuery = ({ small, large, alt }: ImagesProps) => {
+const ImagesByMediaQuery = ({ small, large, alt }: ImagesProps) => {
   return (
     <picture>
       <source srcSet={large} media="(min-width: 1024px)"/>
@@ -13,4 +13,4 @@ const ImageByMediaQuery = ({ small, large, alt }: ImagesProps) => {
   );
 };
 
-export default ImageByMediaQuery;
+export default ImagesByMediaQuery;
