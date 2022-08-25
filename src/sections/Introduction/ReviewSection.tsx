@@ -30,7 +30,7 @@ const ReviewSection = () => {
         REVIEW
       </Section.Subtitle>
       <Section.Title>
-        {'실제 수학대왕 '}
+        {'실제 수학대왕 \n'}
         {'학생들의 후기'}
       </Section.Title>
       <ReviewsContainer>

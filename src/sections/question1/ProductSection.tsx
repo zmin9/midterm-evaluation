@@ -79,19 +79,18 @@ const ProductionText = styled.h3`
   text-align: center;
   color: ${({ theme }) => theme.text2};
   margin-top: 60px;
+  margin-bottom: 80px;
 
-  & > * {
-    display: block;
-
-    ${mediaQuery.large} {
-      display: inline;
-    }
+  white-space: pre-wrap;
+  ${mediaQuery.large}{
+    white-space: normal;
+    margin-bottom: 60px;
   }
 `;
 
 const Products = () => {
   return (
-    <Section bgColor="bg1" paddingT={60} paddingB={80}>
+    <Section bgColor="bg1" paddingT={60}>
       <Productions>
         {
           products.map((item) => (
@@ -113,16 +112,14 @@ const Products = () => {
           ))
         }
       </Productions>
-      <ProductionText>
-        <Typo type="textMB">
+      <Typo type="textMB">
+        <ProductionText>
           {'이 모든 구성이 수학대왕 '}
           <Highlight>프리미엄</Highlight>
-          {'에 '}
-        </Typo>
-        <Typo type="textMB">
+          {'에 \n'}
           포함되어 있습니다.
-        </Typo>
-      </ProductionText>
+        </ProductionText>
+      </Typo>
     </Section>
   );
 };

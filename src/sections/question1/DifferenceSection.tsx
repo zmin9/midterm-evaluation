@@ -1,17 +1,6 @@
 import Section from '../../components/Section';
-import styled from 'styled-components';
-import mediaQuery from '../../styles/mediaQuery';
 import differenceWithOthers from '../../data/differenceWithOthers';
-
-const GraphImage = styled.img`
-  width: 100%;
-  border-radius: 5px;
-
-  ${mediaQuery.large} {
-    width: auto;
-    height: 335px;
-  }
-`;
+import ImageWithStretchedBg from '../../components/image/ImageWithStretchedBg';
 
 const DifferenceSection = () => {
   return (
@@ -22,7 +11,7 @@ const DifferenceSection = () => {
           <Section.Title>{diff.title}</Section.Title>
           <Section.Content>{diff.description}</Section.Content>
           <Section.Card>
-            <GraphImage src={diff.graphImg} alt={`difference graph ${idx + 1}`}/>
+            <ImageWithStretchedBg height='335px' src={diff.graphImg} alt={`difference graph ${idx + 1}`}/>
           </Section.Card>
         </Section>
       ))}

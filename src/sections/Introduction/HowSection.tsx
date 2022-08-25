@@ -4,10 +4,6 @@ import Section from '../../components/Section';
 import mediaQuery from '../../styles/mediaQuery';
 import styled from 'styled-components';
 
-const Image = styled.img`
-  width: 100%;
-  border-radius: 5px;
-`;
 
 const HowLayout = styled.span`
   ${mediaQuery.large} {
@@ -33,14 +29,17 @@ const HowHeadline = styled.h3`
   }
 `;
 const HowImage = styled.div`
-  margin: 0 -40px 80px 0;
+  margin-bottom: 80px;
+  img {
+    position: relative;
+    left: 50%;
+    transform: translate(-38.15%, 0);
+  }
 
   ${mediaQuery.large} {
     margin: 0;
-
     img {
-      width: auto;
-      height: 280px;
+      transform: translate(-50%, 0);
     }
   }
 `;
@@ -48,6 +47,7 @@ const HowImage = styled.div`
 const HowText = styled.div`
   text-align: center;
   margin-bottom: 40px;
+  white-space: pre-wrap;
   ${mediaQuery.large}{
     margin-bottom: 0;
   }
@@ -58,18 +58,18 @@ const HowSection = () => {
     <Section bgColor="bg2" paddingT={40} paddingB={40}>
       <HowLayout>
         <HowImage>
-          <Image src={WhatImage} alt='what mathking does'/>
+          <img src={WhatImage} alt='what mathking does' height='280px'/>
         </HowImage>
         <HowText>
           <HowHeadline>
             <Typo type="textMB">
-              시간을 어떻게 쓰는지 보다 중요한 건,<br/>
-              시간을 <Highlight>어떻게</Highlight> 쓰느냐입니다.
+              {'시간을 얼마나 쓰는지 보다 중요한 건,\n'}
+              {'시간을 '}<Highlight>어떻게</Highlight>{' 쓰느냐입니다.'}
             </Typo>
           </HowHeadline>
           <Typo type="textMR">
-            수천만건의 데이터는 자녀분의 시간을 더욱<br/>
-            효율적으로 사용할 수 있도록 만들어줍니다.
+            {'수천만건의 데이터는 자녀분의 시간을 더욱\n'}
+            {'효율적으로 사용할 수 있도록 만들어줍니다.'}
           </Typo>
         </HowText>
       </HowLayout>
