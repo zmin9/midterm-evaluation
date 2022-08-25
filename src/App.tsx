@@ -3,8 +3,8 @@ import { ThemeProvider } from 'styled-components';
 import theme from './styles/theme';
 import Header from './sections/Header';
 import Introduction from './sections/Introduction/Introduction';
-import Difference from './sections/difference/Difference';
 import Footer from './sections/Footer';
+import Question1 from './sections/question1/Question1';
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
         <GlobalStyle/>
         <Header/>
         <Introduction/>
-        <Difference/>
+        <Question1/>
         <Footer/>
       </ThemeProvider>
     </>
