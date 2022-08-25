@@ -4,6 +4,7 @@ import { DefaultTheme } from 'styled-components';
 const theme: DefaultTheme = {
   bg1: palette.white,
   bg2: palette.gray1,
+  bg3: palette.purple1,
 
   headline: palette.black,
   text1: palette.gray5,
