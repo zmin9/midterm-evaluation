@@ -28,7 +28,7 @@ const ReviewCard = ({ img, imgBgColor, age, lastName, content }: ReviewInfo) => 
   return (
     <Card>
       <ReviewerProfile imgBgColor={imgBgColor}>
-        <img src={imgPrefix + img} alt={`profile_image_${lastName}`}/>
+        <img src={imgPrefix + img} alt={`profile_image_${lastName}`} loading='lazy'/>
         <Typo type="textSR">{age}</Typo>
         <Typo type="textSB">{`\0 ${lastName}OO 학생`}</Typo>
       </ReviewerProfile>

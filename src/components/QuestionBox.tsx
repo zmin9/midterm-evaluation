@@ -34,7 +34,7 @@ const QuestionBox = ({ children }: PropsWithChildren) => {
           {children}
         </Typo>
       </Question>
-      <img alt="question" src={`${imgPrefix}/images/Q.png`} height={60}/>
+      <img alt="question" src={`${imgPrefix}/images/Q.png`} height={60} loading='lazy'/>
     </Container>
   );
 };

@@ -106,7 +106,7 @@ const Products = () => {
                 </ItemText>
               </Typo>
               <ItemImgContainer imgBgColor={item.imgBgColor}>
-                <img src={item.img} alt={item.title + '_icon'}/>
+                <img src={item.img} alt={item.title + '_icon'} loading='lazy'/>
               </ItemImgContainer>
             </ProductionItem>
           ))
