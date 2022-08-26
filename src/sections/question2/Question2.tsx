@@ -1,13 +1,9 @@
 import Section from '../../components/Section';
 import QuestionBox from '../../components/QuestionBox';
 import { Highlight } from '../../components/Typo';
-import NaverPay from '../../statics/naver-pay.png';
-import StoreBenefitGraph from '../../statics/store_benefit_graph.png';
 import styled from 'styled-components';
 import mediaQuery from '../../styles/mediaQuery';
 import ImagesByMediaQuery from '../../components/image/ImagesByMediaQuery';
-import DifferentRefundS from '../../statics/different-refund-small.png';
-import DifferentRefundL from '../../statics/different-refund-large.png';
 import ImageWithStretchedBg from '../../components/image/ImageWithStretchedBg';
 
 const RefundGraphSection = styled.section`
@@ -39,15 +35,15 @@ const Question2 = () => {
         <Section.Title>동기부여가 다르다</Section.Title>
         <Section.Content>학습량에 따른 Point지급으로 동기부여</Section.Content>
         <CouponMargin>
-          <ImageWithStretchedBg src={NaverPay} alt="네이버페이 최대 45000원 환급" height="199px"/>
+          <ImageWithStretchedBg src='/images/naver-pay.png' alt="네이버페이 최대 45000원 환급" height="199px"/>
         </CouponMargin>
       </Section>
       <RefundGraphSection>
-        <ImageWithStretchedBg src={StoreBenefitGraph} alt="공부할 수록 쌓이는 환급" height="331px"/>
+        <ImageWithStretchedBg src='/images/store-benefit-graph.png' alt="공부할 수록 쌓이는 환급" height="331px"/>
       </RefundGraphSection>
       <Section bgColor="bg2" paddingT={60} paddingB={60}>
         <ResponsivePadding>
-          <ImagesByMediaQuery small={DifferentRefundS} large={DifferentRefundL} alt="타 서비스와 달리 공부하면 환급하는 수학대왕"/>
+          <ImagesByMediaQuery small='/images/different-refund-small.png' large='/images/different-refund-large.png' alt="타 서비스와 달리 공부하면 환급하는 수학대왕"/>
         </ResponsivePadding>
       </Section>
     </>

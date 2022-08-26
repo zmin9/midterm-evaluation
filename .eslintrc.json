@@ -23,5 +23,8 @@
     "react/display-name": "off",
     "import/named": "off",
     "@typescript-eslint/comma-dangle": "off"
-  }
+  },
+  "ignorePatterns": [
+    "next.config.js"
+  ]
 }

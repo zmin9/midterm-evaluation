@@ -1,13 +1,13 @@
-import styled from 'styled-components';
-import Header from './sections/Header';
-import Introduction from './sections/Introduction/Introduction';
-import Footer from './sections/Footer';
-import Question1 from './sections/question1/Question1';
-import Question2 from './sections/question2/Question2';
-import Question3 from './sections/question3/Question3';
-import PremiumTalk from './sections/PremiumTalk';
-import Typo from './components/Typo';
-import mediaQuery from './styles/mediaQuery';
+import styled  from 'styled-components';
+import Header from '../src/sections/Header';
+import Introduction from '../src/sections/Introduction/Introduction';
+import Question1 from '../src/sections/question1/Question1';
+import Question2 from '../src/sections/question2/Question2';
+import Question3 from '../src/sections/question3/Question3';
+import PremiumTalk from '../src/sections/PremiumTalk';
+import Typo from '../src/components/Typo';
+import Footer from '../src/sections/Footer';
+import mediaQuery from '../src/styles/mediaQuery';
 
 const ResponseButton = styled.button`
   background-color: ${({ theme }) => theme.button};
@@ -20,7 +20,7 @@ const ResponseButton = styled.button`
 
   border-radius: 9999px;
   border: none;
-  padding: 12px;
+  padding: 12px 0;
 
   width: calc(100% - 40px);
   max-width: 732px;
@@ -29,6 +29,7 @@ const ResponseButton = styled.button`
   ${mediaQuery.large} {
     font-size: 20px;
     line-height: 30px;
+    padding: 15px 0;
   }
 `;
 
@@ -36,7 +37,7 @@ const Background = styled.div`
   background-color: ${({ theme }) => theme.bg2};
 `;
 
-function App() {
+const Index = () => {
   return (
     <Background>
       <Header/>
@@ -53,6 +54,6 @@ function App() {
       <Footer/>
     </Background>
   );
-}
+};
 
-export default App;
+export default Index;

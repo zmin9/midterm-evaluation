@@ -1,4 +1,3 @@
-import WhatImage from '../../statics/what-mathking-does.png';
 import Typo, { Highlight } from '../../components/Typo';
 import Section from '../../components/Section';
 import mediaQuery from '../../styles/mediaQuery';
@@ -58,7 +57,7 @@ const HowSection = () => {
     <Section bgColor="bg2" paddingT={40} paddingB={40}>
       <HowLayout>
         <HowImage>
-          <img src={WhatImage} alt='what mathking does' height='280px'/>
+          <img src='/images/what-mathking-does.png' alt='what mathking does' height={280}/>
         </HowImage>
         <HowText>
           <HowHeadline>

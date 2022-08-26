@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import BgImg from '../statics/headerImg.png';
 import mediaQuery from '../styles/mediaQuery';
 import Typo from '../components/Typo';
 
@@ -7,11 +6,12 @@ const PageHeader = styled.header`
   color: ${({ theme }) => theme.bg1};
   padding-top: 44px;
   text-align: center;
-  
-  background: url(${BgImg}) 45%/cover no-repeat;
+
+  background: url("/images/header-bg.png") center/cover no-repeat;
+
   height: 463px;
 
-  ${mediaQuery.large}{
+  ${mediaQuery.large} {
     height: 648px;
   }
 `;

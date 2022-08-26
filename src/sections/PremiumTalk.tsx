@@ -1,5 +1,4 @@
 import Section from '../components/Section';
-import KakaoTalk from '../statics/kakaotalk.png';
 import styled from 'styled-components';
 import ImageWithStretchedBg from '../components/image/ImageWithStretchedBg';
 
@@ -17,7 +16,7 @@ const PremiumTalk = () => {
         </span>
         </Section.Title>
         <ImageContainer>
-          <ImageWithStretchedBg src={KakaoTalk} alt="프리미엄 결제 요청 알림톡" height="327px"/>
+          <ImageWithStretchedBg src='/images/kakaotalk.png' alt="프리미엄 결제 요청 알림톡" height="327px"/>
         </ImageContainer>
       </Section>
     </>
