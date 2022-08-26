@@ -2,6 +2,7 @@ import Typo, { Highlight } from '../../components/Typo';
 import Section from '../../components/Section';
 import mediaQuery from '../../styles/mediaQuery';
 import styled from 'styled-components';
+import { useCtx } from '../../createCtx';
 
 
 const HowLayout = styled.span`
@@ -53,11 +54,12 @@ const HowText = styled.div`
 `;
 
 const HowSection = () => {
+  const imgPrefix = useCtx();
   return (
     <Section bgColor="bg2" paddingT={40} paddingB={40}>
       <HowLayout>
         <HowImage>
-          <img src='/images/what-mathking-does.png' alt='what mathking does' height={280}/>
+          <img src={`${imgPrefix}/images/what-mathking-does.png`} alt='what mathking does' height={280}/>
         </HowImage>
         <HowText>
           <HowHeadline>

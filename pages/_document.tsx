@@ -1,12 +1,12 @@
-import Document, { Html, Head, Main, NextScript } from 'next/document';
+import Document, { Head, Html, Main, NextScript } from 'next/document';
 
 class MyDocument extends Document {
   render() {
     return (
-      <Html lang='ko'>
+      <Html lang="ko">
         <Head>
           <meta charSet="utf-8"/>
-          <link rel="icon" href="/mathking_logo.png"/>
+          <link rel="icon" href={`${process.env.NODE_ENV !== 'production' ? '' : '/premium-page'}/mathking_logo.png`}/>
           <meta name="theme-color" content="#835EEB"/>
           <meta
             name="description"
@@ -15,7 +15,8 @@ class MyDocument extends Document {
           <meta name="keywords" content="인공지능, AI, 수학, 학습"/>
           <link rel="apple-touch-icon" href="/mathking_logo.png"/>
           <link rel="manifest" href="/manifest.json"/>
-          <link rel="stylesheet" as="style" crossOrigin='anonymous' href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.5/dist/web/variable/pretendardvariable.css"/>
+          <link rel="stylesheet" as="style" crossOrigin="anonymous"
+                href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.5/dist/web/variable/pretendardvariable.css"/>
           <link rel="canonical" href="https://zmin9.github.io/premium-page/"/>
           <meta property="og:url" content="https://zmin9.github.io/premium-page/"/>
           <meta property="og:type" content="website"/>
