@@ -20,7 +20,7 @@ const ResponseButton = styled.button`
 
   border-radius: 9999px;
   border: none;
-  padding: 12px;
+  padding: 12px 0;
 
   width: calc(100% - 40px);
   max-width: 732px;
@@ -29,6 +29,7 @@ const ResponseButton = styled.button`
   ${mediaQuery.large} {
     font-size: 20px;
     line-height: 30px;
+    padding: 15px 0;
   }
 `;
 
