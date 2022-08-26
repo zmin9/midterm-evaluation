@@ -12,9 +12,11 @@ jobs:
 
       - name: Build
         run: yarn build
+        env:
+          NEXT_PUBLIC_PREFIX: ${{ secrets.NEXT_PUBLIC_PREFIX }}
 
       - name: Config user
-        run: git config --global user.email "o3o0903@gmail.com" && git config --global user.name "zmin9"
+        run: git config --global user.email ${{ secrets.EMAIL }} && git config --global user.name ${{ secrets.NAME }}
 
       - name: Deploy
         run: yarn run deploy
