@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import mediaQuery from '../styles/mediaQuery';
-import QLogo from '../statics/Q.png';
 import { PropsWithChildren } from 'react';
 import Typo from './Typo';
 
@@ -33,7 +32,7 @@ const QuestionBox = ({ children }: PropsWithChildren) => {
           {children}
         </Typo>
       </Question>
-      <img alt="question" src={QLogo} height="100%"/>
+      <img alt="question" src='/images/Q.png' height={60}/>
     </Container>
   );
 };

@@ -2,10 +2,7 @@ import Section from '../../components/Section';
 import QuestionBox from '../../components/QuestionBox';
 import Typo, { Highlight } from '../../components/Typo';
 import ImagesByMediaQuery from '../../components/image/ImagesByMediaQuery';
-import AchievementS from '../../statics/achievement_small.png';
-import AchievementL from '../../statics/achievement_large.png';
 import styled from 'styled-components';
-import PositiveCycle from '../../statics/cycle.png';
 import ImageWithStretchedBg from '../../components/image/ImageWithStretchedBg';
 
 const AchievementText = styled.h3`
@@ -25,7 +22,7 @@ const Question3 = () => {
       </Section>
       <Section bgColor="bg2" paddingT={24} paddingB={60}>
         <Section.Card>
-          <ImagesByMediaQuery small={AchievementS} large={AchievementL} alt="학습량에 대해 보상할 때 월등한 학업성취"/>
+          <ImagesByMediaQuery small='/images/achievement_small.png' large='/images/achievement_large.png' alt="학습량에 대해 보상할 때 월등한 학업성취"/>
         </Section.Card>
         <AchievementText>
           <Typo type="textMB">
@@ -42,7 +39,7 @@ const Question3 = () => {
           {'AI의 고도화로 더욱 빠른 성적 향상'}
         </Section.Content>
         <Section.Card>
-          <ImageWithStretchedBg src={PositiveCycle} alt="수학대왕 프리미엄의 선순환 구조" height="335px"/>
+          <ImageWithStretchedBg src='/images/cycle.png' alt="수학대왕 프리미엄의 선순환 구조" height="335px"/>
         </Section.Card>
       </Section>
     </>
