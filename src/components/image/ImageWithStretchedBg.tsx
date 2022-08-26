@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { useCtx } from '../../createCtx';
 
 type ImageProps = {
   src: string,
@@ -16,10 +17,11 @@ const ImageContainer = styled.div`
   }
 `;
 
-const ImageWithStretchedBg = (props: ImageProps) => {
+const ImageWithStretchedBg = ({ src, ...props }: ImageProps) => {
+  const imgPrefix = useCtx();
   return (
     <ImageContainer>
-      <img {...props}/>
+      <img src={imgPrefix + src} {...props} loading="lazy"/>
     </ImageContainer>
   );
 };

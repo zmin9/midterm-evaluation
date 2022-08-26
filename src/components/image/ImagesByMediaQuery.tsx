@@ -1,3 +1,5 @@
+import { useCtx } from '../../createCtx';
+
 type ImagesProps = {
   small: string,
   large: string,
@@ -5,10 +7,11 @@ type ImagesProps = {
 };
 
 const ImagesByMediaQuery = ({ small, large, alt }: ImagesProps) => {
+  const imgPrefix = useCtx();
   return (
     <picture>
-      <source srcSet={large} media="(min-width: 1024px)"/>
-      <img src={small} alt={alt} width="100%" style={{ display: 'block' }}/>
+      <source srcSet={imgPrefix + large} media="(min-width: 1024px)"/>
+      <img src={imgPrefix + small} alt={alt} width="100%" style={{ display: 'block' }} loading='lazy'/>
     </picture>
   );
 };
