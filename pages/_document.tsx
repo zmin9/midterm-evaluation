@@ -7,7 +7,6 @@ class MyDocument extends Document {
         <Head>
           <meta charSet="utf-8"/>
           <link rel="icon" href="/mathking_logo.png"/>
-          <meta name="viewport" content="width=device-width, initial-scale=1"/>
           <meta name="theme-color" content="#835EEB"/>
           <meta
             name="description"
@@ -23,7 +22,6 @@ class MyDocument extends Document {
           <meta property="og:title" content="수학대왕 - 인공지능으로 수학 끝내기"/>
           <meta property="og:description"
                 content="이제는 수학도 인공지능! 인공지능이 분석해주는 수학 실력과 나에게 꼭 필요한 문제만 풀고 싶다면 지금 바로 수학대왕으로!"/>
-          <title>수학대왕 - 인공지능으로 수학 끝내기</title>
         </Head>
         <body>
         <Main/>
