@@ -14,4 +14,4 @@ jobs:
         run: yarn build
 
       - name: Deploy
-        uses: yarn run deploy
+        run: yarn run deploy
