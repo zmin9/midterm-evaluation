@@ -14,7 +14,7 @@ jobs:
         run: yarn build
 
       - name: Config user
-      - run: git config --global user.email "o3o0903@gmail.com" && git config --global user.name "zmin9"
+        run: git config --global user.email "o3o0903@gmail.com" && git config --global user.name "zmin9"
 
       - name: Deploy
         run: yarn run deploy
