@@ -1,0 +1,13 @@
+{
+  "short_name": "Mathking",
+  "name": "Mathking Premium",
+  "icons": [
+    {
+      "src": "mathking_logo.png",
+      "sizes": "175x160",
+      "type": "image/png"
+    }
+  ],
+  "display": "standalone",
+  "theme_color": "#835EEB"
+}
