@@ -11,6 +11,14 @@ jobs:
 
       - name: Build
         run: yarn build
+        env:
+          NEXT_PUBLIC_PREFIX: ${{ secrets.NEXT_PUBLIC_PREFIX }}
 
-      - name: Deploy
-        run: yarn run deploy
+      - run: yarn run export
+      - run: touch ./out/.nojekyll
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: out
