@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import Typo from './Typo';
-import { ReviewInfo } from '../data/review';
 import Image from 'next/image';
+import ReviewInfo from '../types/review';
 
 const Card = styled.div`
   padding: 20px 12px 17px;
