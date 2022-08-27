@@ -1,5 +1,10 @@
+/**
+ * @type {import('next').NextConfig}
+ */
+
 export default {
   assetPrefix: process.env.NEXT_PUBLIC_PREFIX,
+  basePath: process.env.NEXT_PUBLIC_PREFIX,
   compiler: {
     styledComponents: true
   },
@@ -7,6 +12,7 @@ export default {
     ignoreDuringBuilds: true,
   },
   images: {
-    path: process.env.NEXT_PUBLIC_PREFIX,
+    loader: 'akamai',
+    path: "",
   }
 };
