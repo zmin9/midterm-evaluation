@@ -13,9 +13,9 @@
   "scripts": {
     "start": "next start",
     "build": "next build",
+    "export": "next export",
     "test": "next test",
     "eject": "next eject",
-    "deploy": "next export && touch out/.nojekyll && git add -f out/ && git commit -m \"Deploy\" && git subtree split --prefix out -b gh-pages && git push -f origin gh-pages:gh-pages && git branch -D gh-pages",
     "dev": "next dev"
   },
   "browserslist": {

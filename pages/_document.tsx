@@ -1,6 +1,6 @@
 import Document, { Head, Html, Main, NextScript } from 'next/document';
 
-const prefix = process.env.NODE_ENV !== 'production' ? '' : '/premium-page';
+const prefix = process.env.NODE_ENV !== 'production' ? '' : process.env.NEXT_PUBLIC_PREFIX;
 
 class MyDocument extends Document {
   render() {

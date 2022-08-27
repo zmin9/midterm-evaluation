@@ -15,8 +15,11 @@ jobs:
         env:
           NEXT_PUBLIC_PREFIX: ${{ secrets.NEXT_PUBLIC_PREFIX }}
 
-      - name: Config user
-        run: git config --global user.email "o3o0903@gmail.com" && git config --global user.name "zmin9"
+      - run: yarn run export
+      - run: touch ./out/.nojekyll
 
-      - name: Deploy
-        run: yarn run deploy
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: out
