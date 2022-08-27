@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import Typo from './Typo';
-import { ReviewInfo } from '../data/review';
-import { useCtx } from '../createCtx';
+import Image from 'next/image';
+import ReviewInfo from '../types/review';
 
 const Card = styled.div`
   padding: 20px 12px 17px;
@@ -9,26 +9,28 @@ const Card = styled.div`
   background-color: ${({ theme }) => theme.bg1};
 `;
 
-const ReviewerProfile = styled.div<Pick<ReviewInfo, 'imgBgColor'>>`
+const ReviewerProfile = styled.div`
   margin-bottom: 8px;
   display: flex;
   align-items: center;
+`;
 
-  img {
-    margin-right: 8px;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: ${({ imgBgColor }) => imgBgColor};
-  }
+const ProfileImg = styled.div<Pick<ReviewInfo, 'imgBgColor'>>`
+  position: relative;
+  margin-right: 8px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: ${({ imgBgColor }) => imgBgColor};
 `;
 
 const ReviewCard = ({ img, imgBgColor, age, lastName, content }: ReviewInfo) => {
-  const imgPrefix = useCtx();
   return (
     <Card>
-      <ReviewerProfile imgBgColor={imgBgColor}>
-        <img src={imgPrefix + img} alt={`profile_image_${lastName}`} loading='lazy'/>
+      <ReviewerProfile>
+        <ProfileImg imgBgColor={imgBgColor}>
+          <Image src={img} alt={`프로필사진_${lastName}`} layout='fill' objectFit='cover'/>
+        </ProfileImg>
         <Typo type="textSR">{age}</Typo>
         <Typo type="textSB">{`\0 ${lastName}OO 학생`}</Typo>
       </ReviewerProfile>

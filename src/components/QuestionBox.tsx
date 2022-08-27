@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import mediaQuery from '../styles/mediaQuery';
 import { PropsWithChildren } from 'react';
 import Typo from './Typo';
-import { useCtx } from '../createCtx';
+import Image from 'next/image';
 
 const Container = styled.div`
   border-radius: 5px;
@@ -26,7 +26,6 @@ const Question = styled.h1`
 `;
 
 const QuestionBox = ({ children }: PropsWithChildren) => {
-  const imgPrefix = useCtx();
   return (
     <Container>
       <Question>
@@ -34,7 +33,7 @@ const QuestionBox = ({ children }: PropsWithChildren) => {
           {children}
         </Typo>
       </Question>
-      <img alt="question" src={`${imgPrefix}/images/Q.png`} height={60} loading='lazy'/>
+      <Image alt="question" src='/images/Q.png' width={53} height={60}/>
     </Container>
   );
 };

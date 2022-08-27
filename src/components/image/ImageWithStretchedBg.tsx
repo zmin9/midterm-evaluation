@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { useCtx } from '../../createCtx';
+import Image from 'next/image';
 
 type ImageProps = {
   src: string,
@@ -7,21 +7,18 @@ type ImageProps = {
   height: string
 };
 
-const ImageContainer = styled.div`
+const ImageContainer = styled.div<Pick<ImageProps, 'height'>>`
+  position: relative;
   display: flex;
   justify-content: center;
   width: 100%;
-
-  img {
-    display: block;
-  }
+  height: ${({ height }) => height};
 `;
 
-const ImageWithStretchedBg = ({ src, ...props }: ImageProps) => {
-  const imgPrefix = useCtx();
+const ImageWithStretchedBg = ({ src, alt, height }: ImageProps) => {
   return (
-    <ImageContainer>
-      <img src={imgPrefix + src} {...props} loading="lazy"/>
+    <ImageContainer height={height}>
+      <Image src={src} alt={alt} layout='fill' objectFit='contain' objectPosition='bottom'/>
     </ImageContainer>
   );
 };
