@@ -3,6 +3,7 @@ import Section from '../../components/Section';
 import mediaQuery from '../../styles/mediaQuery';
 import styled from 'styled-components';
 import products, { Product } from '../../data/product';
+import Image from 'next/image';
 
 const ProductionItem = styled.div`
   display: flex;
@@ -66,12 +67,14 @@ const ItemImgContainer = styled.div<Pick<Product, 'imgBgColor'>>`
   background-color: ${({ imgBgColor }) => imgBgColor};
   border-radius: 12px;
   padding: 0 14px;
-
+  
   display: flex;
   align-items: center;
-
-  img {
+  
+  div {
+    position: relative;
     width: 100%;
+    height: 100%;
   }
 `;
 
@@ -106,7 +109,9 @@ const Products = () => {
                 </ItemText>
               </Typo>
               <ItemImgContainer imgBgColor={item.imgBgColor}>
-                <img src={item.img} alt={item.title + '_icon'} loading='lazy'/>
+                <div>
+                  <Image src={item.img} alt={item.title + '_icon'} layout='fill' objectFit='contain'/>
+                </div>
               </ItemImgContainer>
             </ProductionItem>
           ))

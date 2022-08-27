@@ -1,13 +1,12 @@
-import { useCtx } from '../../createCtx';
-
 type ImagesProps = {
   small: string,
   large: string,
   alt: string
 };
 
+const imgPrefix = process.env.NODE_ENV !== 'production' ? '' : process.env.NEXT_PUBLIC_PREFIX;
+
 const ImagesByMediaQuery = ({ small, large, alt }: ImagesProps) => {
-  const imgPrefix = useCtx();
   return (
     <picture>
       <source srcSet={imgPrefix + large} media="(min-width: 1024px)"/>

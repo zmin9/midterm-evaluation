@@ -8,7 +8,7 @@ import ImageWithStretchedBg from '../../components/image/ImageWithStretchedBg';
 
 const RefundGraphSection = styled.section`
   background-color: ${({ theme }) => theme.bg3};
-  padding: 60px 44px 59px 38px;
+  padding: 60px 0 59px 0;
 `;
 
 const ResponsivePadding = styled.div`
