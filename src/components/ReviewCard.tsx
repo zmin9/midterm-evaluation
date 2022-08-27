@@ -29,7 +29,7 @@ const ReviewCard = ({ img, imgBgColor, age, lastName, content }: ReviewInfo) => 
     <Card>
       <ReviewerProfile>
         <ProfileImg imgBgColor={imgBgColor}>
-          <Image src={img} alt={`profile_image_${lastName}`} layout='fill' objectFit='cover'/>
+          <Image src={img} alt={`프로필사진_${lastName}`} layout='fill' objectFit='cover'/>
         </ProfileImg>
         <Typo type="textSR">{age}</Typo>
         <Typo type="textSB">{`\0 ${lastName}OO 학생`}</Typo>
