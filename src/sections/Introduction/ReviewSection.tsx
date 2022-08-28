@@ -8,15 +8,6 @@ import ReviewerImg0 from '../../../public/images/reviewer_0.png';
 import ReviewerImg1 from '../../../public/images/reviewer_1.png';
 import ReviewerImg2 from '../../../public/images/reviewer_2.png';
 
-type ReviewInfo = {
-  img: StaticImageData,
-  imgBgColor: string,
-  age: string,
-  lastName: string,
-  content: string
-};
-
-
 const ReviewSectionContainer = styled(SectionContainer)`
   background: ${({ theme }) => theme.purpleGradient};
 
@@ -67,6 +58,14 @@ const ProfileName = styled.span`
 const ReviewContent = styled.span`
   ${typography.textSR}
 `;
+
+type ReviewInfo = {
+  img: StaticImageData,
+  imgBgColor: string,
+  age: string,
+  lastName: string,
+  content: string
+};
 
 const ReviewSection = () => {
   const reviews: ReviewInfo[] = [
