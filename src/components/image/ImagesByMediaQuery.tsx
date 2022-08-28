@@ -1,17 +1,49 @@
+import Image, { StaticImageData } from 'next/image';
+import styled from 'styled-components';
+import mediaQuery from '../../styles/mediaQuery';
+
 type ImagesProps = {
-  small: string,
-  large: string,
+  small: StaticImageData,
+  large: StaticImageData,
+  widthS: number,
+  widthL: number,
   alt: string
 };
 
-const imgPrefix = process.env.NODE_ENV !== 'production' ? '' : process.env.NEXT_PUBLIC_PREFIX;
+const ImagesContainer = styled.div<{ 'widthS': number, 'widthL': number }>`
+  span.small {
+    display: block;
+  }
 
-const ImagesByMediaQuery = ({ small, large, alt }: ImagesProps) => {
+  span.large {
+    display: none;
+  }
+  
+  ${mediaQuery.small} {
+    width: ${({ widthS }) => widthS + 'px'};
+  }
+  
+  ${mediaQuery.large} {
+    span.small {
+      display: none;
+    }
+    span.large {
+      display: block;
+    }
+    width: ${({ widthL }) => widthL + 'px'};
+  }
+`;
+
+const ImagesByMediaQuery = ({ small, large, alt, widthS, widthL }: ImagesProps) => {
   return (
-    <picture>
-      <source srcSet={imgPrefix + large} media="(min-width: 1024px)"/>
-      <img src={imgPrefix + small} alt={alt} width="100%" style={{ display: 'block' }} loading='lazy'/>
-    </picture>
+    <ImagesContainer widthS={widthS} widthL={widthL}>
+      <span className="small">
+        <Image src={small} layout="responsive" alt={alt}/>
+      </span>
+      <span className="large">
+        <Image src={large} layout="responsive" alt={alt}/>
+      </span>
+    </ImagesContainer>
   );
 };
 

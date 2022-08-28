@@ -3,6 +3,9 @@ import styled from 'styled-components';
 import ImagesByMediaQuery from '../../components/image/ImagesByMediaQuery';
 import mediaQuery from '../../styles/mediaQuery';
 
+import ImprovingImgS from '../../../public/images/improving-graph-small.png';
+import ImprovingImgL from '../../../public/images/improving-graph-large.png';
+
 const GraphDescription = styled.div`
   margin-top: 16px;
   color: ${({ theme }) => theme.description};
@@ -35,7 +38,7 @@ const WhatSection = () => {
         누적된 데이터를 통해 증명된 자녀의 성적 향상
       </Section.Content>
       <Section.Card>
-        <ImagesByMediaQuery small='/images/improving-graph-small.png' large='/images/improving-graph-small.png' alt="improving graph"/>
+        <ImagesByMediaQuery small={ImprovingImgS} large={ImprovingImgL} widthS={335} widthL={944} alt="improving graph"/>
       </Section.Card>
       <GraphDescription>
         {'*6개월간의 누적 데이터를 기준으로 산출됨\n'}

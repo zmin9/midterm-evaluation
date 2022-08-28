@@ -5,6 +5,9 @@ import ImagesByMediaQuery from '../../components/image/ImagesByMediaQuery';
 import styled from 'styled-components';
 import ImageHavingMaxWidth from '../../components/image/ImageHavingMaxWidth';
 
+import AchievementImgS from '../../../public/images/achievement_small.png';
+import AchievementImgL from '../../../public/images/achievement_large.png';
+
 import CycleImg from '../../../public/images/cycle.png';
 
 const AchievementText = styled.h3`
@@ -24,7 +27,7 @@ const Question3 = () => {
       </Section>
       <Section bgColor="bg2" paddingT={24} paddingB={60}>
         <Section.Card>
-          <ImagesByMediaQuery small='/images/achievement_small.png' large='/images/achievement_large.png' alt="학습량에 대해 보상할 때 월등한 학업성취"/>
+          <ImagesByMediaQuery small={AchievementImgS} large={AchievementImgL} widthS={335} widthL={944} alt="학습량에 대해 보상할 때 월등한 학업성취"/>
         </Section.Card>
         <AchievementText>
           <Typo type="textMB">
