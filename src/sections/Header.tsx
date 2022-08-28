@@ -4,7 +4,7 @@ import Image from 'next/image';
 import typography from '../styles/typography';
 
 const PageHeader = styled.header`
-  color: ${({ theme }) => theme.bg1};
+  color: ${({ theme }) => theme.text4};
   padding-top: 44px;
   text-align: center;
   position: relative;

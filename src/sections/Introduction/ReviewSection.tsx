@@ -9,7 +9,7 @@ const ReviewSectionContainer = styled(SectionContainer)`
   background: ${({ theme }) => theme.purpleGradient};
 
   & > span, h2 {
-    color: ${({ theme }) => theme.bg1};
+    color: ${({ theme }) => theme.text4};
   }
 `;
 
