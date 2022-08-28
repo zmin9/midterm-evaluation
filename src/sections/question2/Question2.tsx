@@ -1,6 +1,6 @@
 import Section from '../../components/Section';
 import QuestionBox from '../../components/QuestionBox';
-import { Highlight } from '../../components/Typo';
+import Highlight from '../../components/TextHighlight';
 import styled from 'styled-components';
 import ImagesByMediaQuery from '../../components/image/ImagesByMediaQuery';
 import ImageHavingMaxWidth from '../../components/image/ImageHavingMaxWidth';
@@ -30,7 +30,7 @@ const Question2 = () => {
     <>
       <Section bgColor="bg2" paddingT={60}>
         <QuestionBox>
-          {'수학대왕 '}<Highlight>프리미엄</Highlight>{'은 \n'}
+          {'수학대왕 '}<Highlight text='프리미엄'/>{'은 \n'}
           {'왜 다른가요?'}
         </QuestionBox>
       </Section>

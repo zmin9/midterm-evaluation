@@ -1,4 +1,4 @@
-import { Highlight } from '../../components/Typo';
+import Highlight from '../../components/TextHighlight';
 import Section from '../../components/Section';
 import mediaQuery from '../../styles/mediaQuery';
 import styled from 'styled-components';
@@ -65,12 +65,12 @@ const HowSection = () => {
           </div>
         </HowImage>
         <HowText>
-            <HowHeadline>
-                {'시간을 얼마나 쓰는지 보다 중요한 건,\n'}
-                {'시간을 '}<Highlight>어떻게</Highlight>{' 쓰느냐입니다.'}
-            </HowHeadline>
-            {'수천만건의 데이터는 자녀분의 시간을 더욱\n'}
-            {'효율적으로 사용할 수 있도록 만들어줍니다.'}
+          <HowHeadline>
+            {'시간을 얼마나 쓰는지 보다 중요한 건,\n'}
+            {'시간을 '}<Highlight text='어떻게'/>{' 쓰느냐입니다.'}
+          </HowHeadline>
+          {'수천만건의 데이터는 자녀분의 시간을 더욱\n'}
+          {'효율적으로 사용할 수 있도록 만들어줍니다.'}
         </HowText>
       </HowLayout>
     </Section>

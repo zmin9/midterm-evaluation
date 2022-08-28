@@ -1,5 +1,5 @@
 import Section from '../../components/Section';
-import { Highlight } from '../../components/Typo';
+import Highlight from '../../components/TextHighlight';
 import ImagesByMediaQuery from '../../components/image/ImagesByMediaQuery';
 import Store1stImgS from '../../../public/images/store-1st-small.png';
 import Store1stImgL from '../../../public/images/store-1st-large.png';
@@ -11,9 +11,7 @@ const WhoSection = () => {
       <Section.Title>
         {'국내 교육 1위 \n'}
         {'인공지능 학습앱 '}
-        <Highlight>
-          수학대왕
-        </Highlight>
+        <Highlight text='수학대왕'/>
       </Section.Title>
       <Section.Content>
         <a href="https://platum.kr/archives/171236">

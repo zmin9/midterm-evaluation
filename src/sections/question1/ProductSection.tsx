@@ -1,4 +1,4 @@
-import { Highlight } from '../../components/Typo';
+import Highlight from '../../components/TextHighlight';
 import Section from '../../components/Section';
 import mediaQuery from '../../styles/mediaQuery';
 import styled from 'styled-components';
@@ -154,7 +154,7 @@ const Products = () => {
       </Productions>
       <ProductionText>
         {'이 모든 구성이 수학대왕 '}
-        <Highlight>프리미엄</Highlight>
+        <Highlight text='프리미엄'/>
         {'에 \n'}
         포함되어 있습니다.
       </ProductionText>
