@@ -1,14 +1,27 @@
 import Section from '../../components/Section';
 import styled from 'styled-components';
-import Video from '../../components/Video';
 import mediaQuery from '../../styles/mediaQuery';
 
 const VideoContainer = styled.div`
+  position: relative;
+  padding-top: 56.25%;
   margin: 24px -2px 20px;
-  ${mediaQuery.large}{
+
+  ${mediaQuery.large} {
     margin-bottom: 40px;
   }
 `;
+
+const Iframe = styled.iframe`
+  position: absolute;
+  border-radius: 5px;
+  border-style: none;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+`;
+
 
 const WhySection = () => {
   return (
@@ -22,7 +35,7 @@ const WhySection = () => {
         {'인공지능 수학 학습앱'}
       </Section.Content>
       <VideoContainer>
-        <Video url="https://www.youtube-nocookie.com/embed/kb2fdVLIkSU"/>
+        <Iframe src="https://www.youtube-nocookie.com/embed/kb2fdVLIkSU"/>
       </VideoContainer>
     </Section>
   );
