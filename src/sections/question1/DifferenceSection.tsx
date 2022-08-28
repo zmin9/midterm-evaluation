@@ -38,7 +38,7 @@ const DifferenceSection = () => {
           <Section.Title>{diff.title}</Section.Title>
           <Section.Content>{diff.description}</Section.Content>
           <Section.Card>
-            <ImageHavingMaxWidth src={diff.graphImg} alt={`차이점${idx + 1}`} maxWidth='335px'/>
+            <ImageHavingMaxWidth src={diff.graphImg} alt={`차이점${idx + 1}`} maxWidth={335}/>
           </Section.Card>
         </Section>
       ))}

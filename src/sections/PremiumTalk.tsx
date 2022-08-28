@@ -20,7 +20,7 @@ const PremiumTalk = () => {
         </span>
         </Section.Title>
         <ImageContainer>
-          <ImageHavingMaxWidth src={KakaoTalkImg} alt="프리미엄 결제 요청 알림톡" maxWidth="327px"/>
+          <ImageHavingMaxWidth src={KakaoTalkImg} alt="프리미엄 결제 요청 알림톡" maxWidth={327}/>
         </ImageContainer>
       </Section>
     </>

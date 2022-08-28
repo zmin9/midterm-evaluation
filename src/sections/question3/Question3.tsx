@@ -44,7 +44,7 @@ const Question3 = () => {
           {'AI의 고도화로 더욱 빠른 성적 향상'}
         </Section.Content>
         <Section.Card>
-          <ImageHavingMaxWidth src={CycleImg} alt="수학대왕 프리미엄의 선순환 구조" maxWidth="335px"/>
+          <ImageHavingMaxWidth src={CycleImg} alt="수학대왕 프리미엄의 선순환 구조" maxWidth={335}/>
         </Section.Card>
       </Section>
     </>

@@ -17,7 +17,8 @@ const ImagesContainer = styled.div<{ width: number }>`
   }
 `;
 
-const Images = styled.span`
+const Images = styled.div`
+  width: fit-content;
   ${ImagesContainer}.small {
     display: inline-block;
   }

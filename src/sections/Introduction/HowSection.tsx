@@ -2,8 +2,9 @@ import Highlight from '../../components/TextHighlight';
 import Section from '../../components/Section';
 import mediaQuery from '../../styles/mediaQuery';
 import styled from 'styled-components';
-import Image from 'next/image';
 import typography from '../../styles/typography';
+import MathkingSeviceImg from '../../../public/images/what-mathking-does.png';
+import ImageHavingMaxWidth from '../../components/image/ImageHavingMaxWidth';
 
 const HowLayout = styled.span`
   ${mediaQuery.large} {
@@ -27,20 +28,22 @@ const HowHeadline = styled.h3`
   }
 `;
 const HowImage = styled.div`
-  div {
-    position: relative;
-    width: 439px;
-    height: 280px;
-    margin: 0 auto;
-  }
   margin-bottom: 80px;
+  margin-right: -104px;
+  
+  & > * {
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
 
   ${mediaQuery.large} {
-    div {
-      margin: 0;
-      left: 3%;
+    margin: 0;
+    & > * {
+      position: relative;
+      left: 7px;
+      transform: none;
     }
-    margin-bottom: 0;
   }
 `;
 
@@ -60,9 +63,7 @@ const HowSection = () => {
     <Section bgColor="bg2" paddingT={40} paddingB={40}>
       <HowLayout>
         <HowImage>
-          <div>
-            <Image src="/images/what-mathking-does.png" alt="수학대왕이 하는 일" layout="fill"/>
-          </div>
+          <ImageHavingMaxWidth src={MathkingSeviceImg} alt="수학대왕이 하는 일" maxWidth={439}/>
         </HowImage>
         <HowText>
           <HowHeadline>

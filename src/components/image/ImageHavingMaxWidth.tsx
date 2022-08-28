@@ -5,12 +5,13 @@ import mediaQuery from '../../styles/mediaQuery';
 type ImageProps = {
   src: StaticImageData,
   alt: string,
-  maxWidth: string
+  maxWidth: number
 };
 
 const ImageContainer = styled.div<Pick<ImageProps, 'maxWidth'>>`
+  width: 100%;
   ${mediaQuery.small} {
-    width: ${({ maxWidth }) => maxWidth};
+    width: ${({ maxWidth }) => maxWidth + 'px'};
   }
 `;
 

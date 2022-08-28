@@ -40,13 +40,13 @@ const Question2 = () => {
         <Section.Content>학습량에 따른 Point지급으로 동기부여</Section.Content>
         <NaverCouponContainer>
           <AlignCenter>
-            <ImageHavingMaxWidth src={NaverPayImg} alt="네이버페이 최대 45000원 환급" maxWidth="272px"/>
+            <ImageHavingMaxWidth src={NaverPayImg} alt="네이버페이 최대 45000원 환급" maxWidth={272}/>
           </AlignCenter>
         </NaverCouponContainer>
       </Section>
       <RefundGraphSection>
         <AlignCenter>
-          <ImageHavingMaxWidth src={BenefitImg} alt="수학대왕과 10개월 공부 시 최대 202% 환급" maxWidth="293px"/>
+          <ImageHavingMaxWidth src={BenefitImg} alt="수학대왕과 10개월 공부 시 최대 202% 환급" maxWidth={293}/>
         </AlignCenter>
       </RefundGraphSection>
       <Section bgColor="bg2" paddingT={60} paddingB={60}>
