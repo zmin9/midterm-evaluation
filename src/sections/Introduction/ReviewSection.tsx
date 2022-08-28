@@ -1,9 +1,12 @@
 import styled from 'styled-components';
 import mediaQuery from '../../styles/mediaQuery';
 import Section, { SectionContainer } from '../../components/Section';
-import ReviewInfo from '../../types/review';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import typography from '../../styles/typography';
+
+import ReviewerImg0 from '../../../public/images/reviewer_0.png';
+import ReviewerImg1 from '../../../public/images/reviewer_1.png';
+import ReviewerImg2 from '../../../public/images/reviewer_2.png';
 
 const ReviewSectionContainer = styled(SectionContainer)`
   background: ${({ theme }) => theme.purpleGradient};
@@ -56,24 +59,32 @@ const ReviewContent = styled.span`
   ${typography.textSR}
 `;
 
+type ReviewInfo = {
+  img: StaticImageData,
+  imgBgColor: string,
+  age: string,
+  lastName: string,
+  content: string
+};
+
 const ReviewSection = () => {
   const reviews: ReviewInfo[] = [
     {
-      img: '/images/reviewer_0.png',
+      img: ReviewerImg0,
       imgBgColor: '#BEFFB8',
       age: '고3',
       lastName: '최',
       content: '수학ㅜㅜ진짜 자신없어서 학원어디다닐까 고민도 많이하고 했는데ㅜㅜ 혼자 실력확인하고 문제도 풀어보고 도움이 많이 되요! 적극추천합니다!',
     },
     {
-      img: '/images/reviewer_1.png',
+      img: ReviewerImg1,
       imgBgColor: '#FFDE53',
       age: '고2',
       lastName: '김',
       content: '현재 고등수학 앱 중에서 가장 좋은 것 같아요 무엇보다도 부족한 부분만 집중적으로 공부할 수 있도록 문제가 제공되는게 유용한 것 같습니다!!',
     },
     {
-      img: '/images/reviewer_2.png',
+      img: ReviewerImg2,
       imgBgColor: '#84F8FF',
       age: '중3',
       lastName: '이',
