@@ -57,7 +57,7 @@ const Header = () => {
           50만명이 선택한 인공지능 수학
         </Typo>
       </HeaderSubTitle>
-      <Image src="/images/header-bg.png" layout="fill" objectFit="cover" objectPosition="bottom" priority/>
+      <Image src="/images/header-bg.png" layout="fill" objectFit="cover" objectPosition="bottom" quality={100} priority/>
     </PageHeader>
   );
 };

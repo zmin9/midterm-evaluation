@@ -1,6 +1,7 @@
 import Section from '../components/Section';
 import styled from 'styled-components';
-import ImageWithStretchedBg from '../components/image/ImageWithStretchedBg';
+import ImageHavingMaxWidth from '../components/image/ImageHavingMaxWidth';
+import KakaoTalkImg from '../../public/images/kakaotalk.png';
 
 const ImageContainer = styled.div`
   margin: 24px 5px 0 0;
@@ -16,7 +17,7 @@ const PremiumTalk = () => {
         </span>
         </Section.Title>
         <ImageContainer>
-          <ImageWithStretchedBg src='/images/kakaotalk.png' alt="프리미엄 결제 요청 알림톡" height="327px"/>
+          <ImageHavingMaxWidth src={KakaoTalkImg} alt="프리미엄 결제 요청 알림톡" maxWidth="327px"/>
         </ImageContainer>
       </Section>
     </>

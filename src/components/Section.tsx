@@ -52,9 +52,6 @@ const SectionCard = styled.div<Pick<SectionProps, 'bgColor'>>`
 
   margin-top: 24px;
   border-radius: 5px;
-
-  display: flex;
-  justify-content: center;
 `;
 
 type BackgroundColorType = 'bg1' | 'bg2';

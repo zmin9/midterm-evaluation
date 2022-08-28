@@ -3,7 +3,9 @@ import QuestionBox from '../../components/QuestionBox';
 import Typo, { Highlight } from '../../components/Typo';
 import ImagesByMediaQuery from '../../components/image/ImagesByMediaQuery';
 import styled from 'styled-components';
-import ImageWithStretchedBg from '../../components/image/ImageWithStretchedBg';
+import ImageHavingMaxWidth from '../../components/image/ImageHavingMaxWidth';
+
+import CycleImg from '../../../public/images/cycle.png';
 
 const AchievementText = styled.h3`
   text-align: center;
@@ -39,7 +41,7 @@ const Question3 = () => {
           {'AI의 고도화로 더욱 빠른 성적 향상'}
         </Section.Content>
         <Section.Card>
-          <ImageWithStretchedBg src='/images/cycle.png' alt="수학대왕 프리미엄의 선순환 구조" height="335px"/>
+          <ImageHavingMaxWidth src={CycleImg} alt="수학대왕 프리미엄의 선순환 구조" maxWidth="335px"/>
         </Section.Card>
       </Section>
     </>
