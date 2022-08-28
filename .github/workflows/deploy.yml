@@ -12,8 +12,6 @@ jobs:
 
       - name: Build
         run: yarn build
-        env:
-          NEXT_PUBLIC_PREFIX: ${{ secrets.NEXT_PUBLIC_PREFIX }}
 
       - run: yarn run export
       - run: touch ./out/.nojekyll

@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import mediaQuery from '../styles/mediaQuery';
 import Image from 'next/image';
 import typography from '../styles/typography';
+import HeaderImg from '../../public/images/header-bg.png';
 
 const PageHeader = styled.header`
   color: ${({ theme }) => theme.text4};
@@ -49,7 +50,7 @@ const Header = () => {
       <HeaderSubTitle>
         50만명이 선택한 인공지능 수학
       </HeaderSubTitle>
-      <Image src="/images/header-bg.png" layout="fill" objectFit="cover" objectPosition="bottom" quality={100} priority/>
+      <Image src={HeaderImg} layout="fill" objectFit="cover" objectPosition="bottom" quality={100} priority/>
     </PageHeader>
   );
 };
