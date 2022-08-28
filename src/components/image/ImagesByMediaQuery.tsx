@@ -10,40 +10,43 @@ type ImagesProps = {
   alt: string
 };
 
-const ImagesContainer = styled.div<{ 'widthS': number, 'widthL': number }>`
-  span.small {
-    display: block;
+const ImagesContainer = styled.div<{ width: number }>`
+  width: calc(100vw - 40px);
+  ${mediaQuery.small} {
+    width: ${({ width }) => width + 'px'};
+  }
+`;
+
+const Images = styled.span`
+  ${ImagesContainer}.small {
+    display: inline-block;
   }
 
-  span.large {
+  ${ImagesContainer}.large {
     display: none;
   }
-  
-  ${mediaQuery.small} {
-    width: ${({ widthS }) => widthS + 'px'};
-  }
-  
+
   ${mediaQuery.large} {
-    span.small {
+    ${ImagesContainer}.small {
       display: none;
     }
-    span.large {
-      display: block;
+
+    ${ImagesContainer}.large {
+      display: inline-block;
     }
-    width: ${({ widthL }) => widthL + 'px'};
   }
 `;
 
 const ImagesByMediaQuery = ({ small, large, alt, widthS, widthL }: ImagesProps) => {
   return (
-    <ImagesContainer widthS={widthS} widthL={widthL}>
-      <span className="small">
+    <Images>
+      <ImagesContainer className="small" width={widthS}>
         <Image src={small} layout="responsive" alt={alt}/>
-      </span>
-      <span className="large">
+      </ImagesContainer>
+      <ImagesContainer className="large" width={widthL}>
         <Image src={large} layout="responsive" alt={alt}/>
-      </span>
-    </ImagesContainer>
+      </ImagesContainer>
+    </Images>
   );
 };
 
