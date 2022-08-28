@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 import mediaQuery from '../styles/mediaQuery';
 import { PropsWithChildren } from 'react';
-import Typo from './Typo';
 import Image from 'next/image';
+import typography from '../styles/typography';
 
 const Container = styled.div`
   border-radius: 5px;
@@ -18,6 +18,7 @@ const Container = styled.div`
 `;
 
 const Question = styled.h1`
+  ${typography.H1}
   white-space: pre-wrap;
 
   ${mediaQuery.large} {
@@ -29,9 +30,7 @@ const QuestionBox = ({ children }: PropsWithChildren) => {
   return (
     <Container>
       <Question>
-        <Typo type="H1">
-          {children}
-        </Typo>
+        {children}
       </Question>
       <Image alt="question" src='/images/Q.png' width={53} height={60}/>
     </Container>

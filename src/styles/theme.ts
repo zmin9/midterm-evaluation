@@ -10,6 +10,7 @@ const theme: DefaultTheme = {
   text1: palette.gray5,
   text2: palette.gray3,
   text3: palette.gray2,
+  text4: palette.white,
   highlight: palette.purple2,
   description: palette.gray4,
 

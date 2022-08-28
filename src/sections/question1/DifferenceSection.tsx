@@ -1,10 +1,15 @@
 import Section from '../../components/Section';
-import ImageWithStretchedBg from '../../components/image/ImageWithStretchedBg';
+
+import DiffImage0 from '../../../public/images/diff-graph_0.png';
+import DiffImage1 from '../../../public/images/diff-graph_1.png';
+import DiffImage2 from '../../../public/images/diff-graph_2.png';
+import { StaticImageData } from 'next/image';
+import ImageHavingMaxWidth from '../../components/image/ImageHavingMaxWidth';
 
 type Difference = {
   title: string,
   description: string,
-  graphImg: string,
+  graphImg: StaticImageData,
 };
 
 const DifferenceSection = () => {
@@ -12,17 +17,17 @@ const DifferenceSection = () => {
     {
       title:'차별화된 몰입감',
       description: '프리미엄 시스템을 통해 자기주도적 몰입 유도',
-      graphImg: '/images/diff-graph_0.png'
+      graphImg: DiffImage0
     },
     {
       title:'압도적인 문제풀이량',
       description: '프리미엄 시스템을 통해 자발적인 학습 유도',
-      graphImg: '/images/diff-graph_1.png'
+      graphImg: DiffImage1
     },
     {
       title:'합리적인 가격',
       description: '기존 교육 서비스들에 비해 훨씬 저렴한 가격',
-      graphImg: '/images/diff-graph_2.png'
+      graphImg: DiffImage2
     }
   ];
   return (
@@ -33,7 +38,7 @@ const DifferenceSection = () => {
           <Section.Title>{diff.title}</Section.Title>
           <Section.Content>{diff.description}</Section.Content>
           <Section.Card>
-            <ImageWithStretchedBg height='335px' src={diff.graphImg} alt={`차이점${idx + 1}`}/>
+            <ImageHavingMaxWidth src={diff.graphImg} alt={`차이점${idx + 1}`} maxWidth={335}/>
           </Section.Card>
         </Section>
       ))}

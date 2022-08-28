@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 import mediaQuery from '../styles/mediaQuery';
-import Typo from '../components/Typo';
 import Image from 'next/image';
+import typography from '../styles/typography';
 
 const PageHeader = styled.header`
-  color: ${({ theme }) => theme.bg1};
+  color: ${({ theme }) => theme.text4};
   padding-top: 44px;
   text-align: center;
   position: relative;
@@ -19,12 +19,12 @@ const PageHeader = styled.header`
 const HeaderTitle = styled.h1`
   z-index: 1;
   position: relative;
+  white-space: pre-wrap;
+  ${typography.H1}
 
   ${mediaQuery.large} {
-    span {
-      font-size: 32px;
-      line-height: 47.36px;
-    }
+    font-size: 32px;
+    line-height: 47.36px;
   }
 `;
 
@@ -32,12 +32,11 @@ const HeaderSubTitle = styled.h2`
   z-index: 1;
   position: relative;
   margin-top: 12px;
+  ${typography.textMR}
 
   ${mediaQuery.large} {
-    span {
-      font-size: 20px;
-      line-height: 29.6px;
-    }
+    font-size: 20px;
+    line-height: 29.6px;
   }
 `;
 
@@ -45,19 +44,12 @@ const Header = () => {
   return (
     <PageHeader>
       <HeaderTitle>
-        <Typo type="H1">
-          자녀분 공부는
-        </Typo><br/>
-        <Typo type="H1">
-          수학대왕이 시킬게요
-        </Typo>
+        {'자녀분 공부는\n수학대왕이 시킬게요'}
       </HeaderTitle>
       <HeaderSubTitle>
-        <Typo type="textMR">
-          50만명이 선택한 인공지능 수학
-        </Typo>
+        50만명이 선택한 인공지능 수학
       </HeaderSubTitle>
-      <Image src="/images/header-bg.png" layout="fill" objectFit="cover" objectPosition="bottom" priority/>
+      <Image src="/images/header-bg.png" layout="fill" objectFit="cover" objectPosition="bottom" quality={100} priority/>
     </PageHeader>
   );
 };

@@ -1,7 +1,9 @@
 import styled from 'styled-components';
-import Typo from './Typo';
 import { createContext, PropsWithChildren, useContext } from 'react';
 import mediaQuery from '../styles/mediaQuery';
+import typography from '../styles/typography';
+
+type BackgroundColorType = 'bg1' | 'bg2';
 
 type SectionProps = {
   bgColor: BackgroundColorType,
@@ -22,16 +24,19 @@ export const SectionContainer = styled.section<SectionProps>`
 
 const SectionSubtitle = styled.span`
   color: ${({ theme }) => theme.highlight};
+  ${typography.textSR}
 `;
 
 const SectionTitle = styled.h2`
   color: ${({ theme }) => theme.headline};
+  ${typography.H3}
 
   ${SectionSubtitle} + & {
     margin-top: 4px;
   }
-  
+
   white-space: pre-wrap;
+
   ${mediaQuery.large} {
     white-space: normal;
   }
@@ -39,9 +44,11 @@ const SectionTitle = styled.h2`
 
 const SectionContent = styled.p`
   color: ${({ theme }) => theme.text1};
+  ${typography.textSR}
   margin-top: 12px;
 
   white-space: pre-wrap;
+
   ${mediaQuery.large} {
     white-space: normal;
   }
@@ -52,12 +59,10 @@ const SectionCard = styled.div<Pick<SectionProps, 'bgColor'>>`
 
   margin-top: 24px;
   border-radius: 5px;
-
+  
   display: flex;
   justify-content: center;
 `;
-
-type BackgroundColorType = 'bg1' | 'bg2';
 
 const BgContext = createContext<BackgroundColorType>('bg1');
 
@@ -73,19 +78,17 @@ const Section = ({ children, bgColor = 'bg1', paddingT = 0, paddingB = 0 }: Prop
 
 Section.Subtitle = ({ children }: PropsWithChildren) => (
   <SectionSubtitle>
-    <Typo type="textSR">
-      {children}
-    </Typo>
+    {children}
   </SectionSubtitle>
 );
 Section.Title = ({ children }: PropsWithChildren) => (
   <SectionTitle>
-    <Typo type="H3">{children}</Typo>
+    {children}
   </SectionTitle>
 );
 Section.Content = ({ children }: PropsWithChildren) => (
   <SectionContent>
-    <Typo type="textSR">{children}</Typo>
+    {children}
   </SectionContent>
 );
 

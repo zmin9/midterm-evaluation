@@ -1,23 +1,27 @@
 import Section from '../../components/Section';
 import QuestionBox from '../../components/QuestionBox';
-import { Highlight } from '../../components/Typo';
+import Highlight from '../../components/TextHighlight';
 import styled from 'styled-components';
-import mediaQuery from '../../styles/mediaQuery';
 import ImagesByMediaQuery from '../../components/image/ImagesByMediaQuery';
-import ImageWithStretchedBg from '../../components/image/ImageWithStretchedBg';
+import ImageHavingMaxWidth from '../../components/image/ImageHavingMaxWidth';
+
+import NaverPayImg from '../../../public/images/naver-pay.png';
+import BenefitImg from '../../../public/images/store-benefit-graph.png';
+import DifferentImgS from '../../../public/images/different-refund-small.png';
+import DifferentImgL from '../../../public/images/different-refund-large.png';
+
+const AlignCenter = styled.div`
+  & > * {
+    margin: 0 auto;
+  }
+`;
 
 const RefundGraphSection = styled.section`
   background-color: ${({ theme }) => theme.bg3};
   padding: 60px 0 59px 0;
 `;
 
-const ResponsivePadding = styled.div`
-  ${mediaQuery.large} {
-    padding: 0 130px;
-  }
-`;
-
-const CouponMargin = styled.div`
+const NaverCouponContainer = styled.div`
   margin-top: 44px;
 `;
 
@@ -26,7 +30,7 @@ const Question2 = () => {
     <>
       <Section bgColor="bg2" paddingT={60}>
         <QuestionBox>
-          {'수학대왕 '}<Highlight>프리미엄</Highlight>{'은 \n'}
+          {'수학대왕 '}<Highlight text='프리미엄'/>{'은 \n'}
           {'왜 다른가요?'}
         </QuestionBox>
       </Section>
@@ -34,17 +38,21 @@ const Question2 = () => {
         <Section.Subtitle>자발적 학습을 위한</Section.Subtitle>
         <Section.Title>동기부여가 다르다</Section.Title>
         <Section.Content>학습량에 따른 Point지급으로 동기부여</Section.Content>
-        <CouponMargin>
-          <ImageWithStretchedBg src='/images/naver-pay.png' alt="네이버페이 최대 45000원 환급" height="199px"/>
-        </CouponMargin>
+        <NaverCouponContainer>
+          <AlignCenter>
+            <ImageHavingMaxWidth src={NaverPayImg} alt="네이버페이 최대 45000원 환급" maxWidth={272}/>
+          </AlignCenter>
+        </NaverCouponContainer>
       </Section>
       <RefundGraphSection>
-        <ImageWithStretchedBg src='/images/store-benefit-graph.png' alt="공부할 수록 쌓이는 환급" height="331px"/>
+        <AlignCenter>
+          <ImageHavingMaxWidth src={BenefitImg} alt="수학대왕과 10개월 공부 시 최대 202% 환급" maxWidth={293}/>
+        </AlignCenter>
       </RefundGraphSection>
       <Section bgColor="bg2" paddingT={60} paddingB={60}>
-        <ResponsivePadding>
-          <ImagesByMediaQuery small='/images/different-refund-small.png' large='/images/different-refund-large.png' alt="타 서비스와 달리 공부하면 환급하는 수학대왕"/>
-        </ResponsivePadding>
+        <AlignCenter>
+          <ImagesByMediaQuery small={DifferentImgS} large={DifferentImgL} widthS={335} widthL={764} alt="타 서비스와 달리 공부하면 환급하는 수학대왕"/>
+        </AlignCenter>
       </Section>
     </>
   );
