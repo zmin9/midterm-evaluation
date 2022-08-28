@@ -5,6 +5,9 @@ import KakaoTalkImg from '../../public/images/kakaotalk.png';
 
 const ImageContainer = styled.div`
   margin: 24px 5px 0 0;
+  & > * {
+    margin: 0 auto;
+  }
 `;
 
 const PremiumTalk = () => {

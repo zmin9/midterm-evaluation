@@ -3,6 +3,8 @@ import Typo from './Typo';
 import { createContext, PropsWithChildren, useContext } from 'react';
 import mediaQuery from '../styles/mediaQuery';
 
+type BackgroundColorType = 'bg1' | 'bg2';
+
 type SectionProps = {
   bgColor: BackgroundColorType,
   paddingT?: number,
@@ -30,8 +32,9 @@ const SectionTitle = styled.h2`
   ${SectionSubtitle} + & {
     margin-top: 4px;
   }
-  
+
   white-space: pre-wrap;
+
   ${mediaQuery.large} {
     white-space: normal;
   }
@@ -42,6 +45,7 @@ const SectionContent = styled.p`
   margin-top: 12px;
 
   white-space: pre-wrap;
+
   ${mediaQuery.large} {
     white-space: normal;
   }
@@ -52,9 +56,11 @@ const SectionCard = styled.div<Pick<SectionProps, 'bgColor'>>`
 
   margin-top: 24px;
   border-radius: 5px;
-`;
 
-type BackgroundColorType = 'bg1' | 'bg2';
+  & > * {
+    margin: 0 auto;
+  }
+`;
 
 const BgContext = createContext<BackgroundColorType>('bg1');
 

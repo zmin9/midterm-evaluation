@@ -12,6 +12,9 @@ import BenefitImage from '../../../public/images/store-benefit-graph.png';
 const RefundGraphSection = styled.section`
   background-color: ${({ theme }) => theme.bg3};
   padding: 60px 0 59px 0;
+  & > * {
+    margin: 0 auto;
+  }
 `;
 
 const ResponsivePadding = styled.div`
@@ -22,6 +25,9 @@ const ResponsivePadding = styled.div`
 
 const CouponMargin = styled.div`
   margin-top: 44px;
+  & > * {
+    margin: 0 auto;
+  }
 `;
 
 const Question2 = () => {
