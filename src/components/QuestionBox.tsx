@@ -3,6 +3,7 @@ import mediaQuery from '../styles/mediaQuery';
 import { PropsWithChildren } from 'react';
 import Image from 'next/image';
 import typography from '../styles/typography';
+import QImg from '../../public/images/Q.png';
 
 const Container = styled.div`
   border-radius: 5px;
@@ -32,7 +33,7 @@ const QuestionBox = ({ children }: PropsWithChildren) => {
       <Question>
         {children}
       </Question>
-      <Image alt="question" src='/images/Q.png' width={53} height={60}/>
+      <Image alt="question" src={QImg} width={53} height={60}/>
     </Container>
   );
 };
