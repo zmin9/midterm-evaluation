@@ -1,10 +1,12 @@
-import Typo, { Highlight } from '../../components/Typo';
+import { Highlight } from '../../components/Typo';
 import Section from '../../components/Section';
 import mediaQuery from '../../styles/mediaQuery';
 import styled from 'styled-components';
 import Image from 'next/image';
+import typography from '../../styles/typography';
 
 const ProductionItem = styled.div`
+  ${typography.textSR}
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -66,10 +68,10 @@ const ItemImgContainer = styled.div<Pick<Product, 'imgBgColor'>>`
   background-color: ${({ imgBgColor }) => imgBgColor};
   border-radius: 12px;
   padding: 0 14px;
-  
+
   display: flex;
   align-items: center;
-  
+
   div {
     position: relative;
     width: 100%;
@@ -79,12 +81,14 @@ const ItemImgContainer = styled.div<Pick<Product, 'imgBgColor'>>`
 
 const ProductionText = styled.h3`
   text-align: center;
+  ${typography.textMB}
   color: ${({ theme }) => theme.text2};
   margin-top: 60px;
   margin-bottom: 80px;
 
   white-space: pre-wrap;
-  ${mediaQuery.large}{
+
+  ${mediaQuery.large} {
     white-space: normal;
     margin-bottom: 60px;
   }
@@ -131,33 +135,29 @@ const Products = () => {
         {
           products.map((item) => (
             <ProductionItem key={item.title}>
-              <Typo type="textSR">
-                <ItemText>
-                  <ItemTitle>
-                    {item.title}
-                  </ItemTitle>
-                  <ItemDesc>
-                    {item.description}
-                  </ItemDesc>
-                </ItemText>
-              </Typo>
+              <ItemText>
+                <ItemTitle>
+                  {item.title}
+                </ItemTitle>
+                <ItemDesc>
+                  {item.description}
+                </ItemDesc>
+              </ItemText>
               <ItemImgContainer imgBgColor={item.imgBgColor}>
                 <div>
-                  <Image src={item.img} alt={item.title + '_icon'} layout='fill' objectFit='contain'/>
+                  <Image src={item.img} alt={item.title + '_icon'} layout="fill" objectFit="contain"/>
                 </div>
               </ItemImgContainer>
             </ProductionItem>
           ))
         }
       </Productions>
-      <Typo type="textMB">
-        <ProductionText>
-          {'이 모든 구성이 수학대왕 '}
-          <Highlight>프리미엄</Highlight>
-          {'에 \n'}
-          포함되어 있습니다.
-        </ProductionText>
-      </Typo>
+      <ProductionText>
+        {'이 모든 구성이 수학대왕 '}
+        <Highlight>프리미엄</Highlight>
+        {'에 \n'}
+        포함되어 있습니다.
+      </ProductionText>
     </Section>
   );
 };

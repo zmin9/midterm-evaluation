@@ -2,8 +2,8 @@ import styled from 'styled-components';
 import mediaQuery from '../../styles/mediaQuery';
 import Section, { SectionContainer } from '../../components/Section';
 import ReviewInfo from '../../types/review';
-import Typo from '../../components/Typo';
 import Image from 'next/image';
+import typography from '../../styles/typography';
 
 const ReviewSectionContainer = styled(SectionContainer)`
   background: ${({ theme }) => theme.purpleGradient};
@@ -13,7 +13,7 @@ const ReviewSectionContainer = styled(SectionContainer)`
   }
 `;
 
-const ReviewsContainer = styled.div`
+const Reviews = styled.div`
   margin: 24px 8px 0;
   display: flex;
   flex-direction: column;
@@ -44,6 +44,16 @@ const ProfileImg = styled.div<Pick<ReviewInfo, 'imgBgColor'>>`
   height: 40px;
   border-radius: 50%;
   background-color: ${({ imgBgColor }) => imgBgColor};
+`;
+
+const ProfileAge = styled.span`
+  ${typography.textSR}
+`;
+const ProfileName = styled.span`
+  ${typography.textSB}
+`;
+const ReviewContent = styled.span`
+  ${typography.textSR}
 `;
 
 const ReviewSection = () => {
@@ -80,7 +90,7 @@ const ReviewSection = () => {
         {'실제 수학대왕 \n'}
         {'학생들의 후기'}
       </Section.Title>
-      <ReviewsContainer>
+      <Reviews>
         {
           reviews.map(({ lastName, content, age, img, imgBgColor }: ReviewInfo) =>
             <ReviewCard key={lastName + age}>
@@ -88,14 +98,14 @@ const ReviewSection = () => {
                 <ProfileImg imgBgColor={imgBgColor}>
                   <Image src={img} alt={`프로필사진_${lastName}`} layout="fill" objectFit="cover"/>
                 </ProfileImg>
-                <Typo type="textSR">{age}</Typo>
-                <Typo type="textSB">{`\0 ${lastName}OO 학생`}</Typo>
+                <ProfileAge>{age}</ProfileAge>
+                <ProfileName>{`\0 ${lastName}OO 학생`}</ProfileName>
               </ReviewerProfile>
-              <Typo type="textSR">{content}</Typo>
+              <ReviewContent>{content}</ReviewContent>
             </ReviewCard>,
           )
         }
-      </ReviewsContainer>
+      </Reviews>
     </ReviewSectionContainer>
   );
 };

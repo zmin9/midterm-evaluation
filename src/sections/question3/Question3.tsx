@@ -1,6 +1,6 @@
 import Section from '../../components/Section';
 import QuestionBox from '../../components/QuestionBox';
-import Typo, { Highlight } from '../../components/Typo';
+import { Highlight } from '../../components/Typo';
 import ImagesByMediaQuery from '../../components/image/ImagesByMediaQuery';
 import styled from 'styled-components';
 import ImageHavingMaxWidth from '../../components/image/ImageHavingMaxWidth';
@@ -9,8 +9,10 @@ import AchievementImgS from '../../../public/images/achievement_small.png';
 import AchievementImgL from '../../../public/images/achievement_large.png';
 
 import CycleImg from '../../../public/images/cycle.png';
+import typography from '../../styles/typography';
 
 const AchievementText = styled.h3`
+  ${typography.textMB}
   text-align: center;
   color: ${({ theme }) => theme.text2};
   margin-top: 60px;
@@ -30,10 +32,8 @@ const Question3 = () => {
           <ImagesByMediaQuery small={AchievementImgS} large={AchievementImgL} widthS={335} widthL={944} alt="학습량에 대해 보상할 때 월등한 학업성취"/>
         </Section.Card>
         <AchievementText>
-          <Typo type="textMB">
-            학습결과가 아닌 <Highlight>학습량</Highlight>에 보상을 줄 때<br/>
-            <Highlight>학업성취도</Highlight>가 올라간다는 연구 결과
-          </Typo>
+          학습결과가 아닌 <Highlight>학습량</Highlight>에 보상을 줄 때<br/>
+          <Highlight>학업성취도</Highlight>가 올라간다는 연구 결과
         </AchievementText>
       </Section>
       <Section bgColor="bg1" paddingT={60} paddingB={60}>

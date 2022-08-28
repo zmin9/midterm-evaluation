@@ -5,13 +5,14 @@ import Question1 from '../src/sections/question1/Question1';
 import Question2 from '../src/sections/question2/Question2';
 import Question3 from '../src/sections/question3/Question3';
 import PremiumTalk from '../src/sections/PremiumTalk';
-import Typo from '../src/components/Typo';
 import Footer from '../src/sections/Footer';
 import mediaQuery from '../src/styles/mediaQuery';
+import typography from '../src/styles/typography';
 
 const ResponseButton = styled.button`
   background-color: ${({ theme }) => theme.button};
   color: ${({ theme }) => theme.onButton};
+  ${typography.textMB}
 
   position: sticky;
   bottom: 20px;
@@ -27,8 +28,7 @@ const ResponseButton = styled.button`
 
 
   ${mediaQuery.large} {
-    font-size: 20px;
-    line-height: 30px;
+    ${typography.H3}
     padding: 15px 0;
   }
 `;
@@ -47,9 +47,7 @@ const Index = () => {
       <Question3/>
       <PremiumTalk/>
       <ResponseButton onClick={() => alert('결제 성공')}>
-        <Typo type="textMB">
-          자녀분의 요청에 응답하기
-        </Typo>
+        자녀분의 요청에 응답하기
       </ResponseButton>
       <Footer/>
     </Background>

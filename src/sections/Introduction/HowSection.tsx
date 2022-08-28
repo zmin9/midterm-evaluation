@@ -1,9 +1,9 @@
-import Typo, { Highlight } from '../../components/Typo';
+import { Highlight } from '../../components/Typo';
 import Section from '../../components/Section';
 import mediaQuery from '../../styles/mediaQuery';
 import styled from 'styled-components';
 import Image from 'next/image';
-
+import typography from '../../styles/typography';
 
 const HowLayout = styled.span`
   ${mediaQuery.large} {
@@ -19,13 +19,11 @@ const HowLayout = styled.span`
 `;
 
 const HowHeadline = styled.h3`
+  ${typography.textMB}
   margin-bottom: 24px;
 
   ${mediaQuery.large} {
-    span {
-      font-size: 20px;
-      line-height: 30px;
-    }
+    ${typography.H3}
   }
 `;
 const HowImage = styled.div`
@@ -47,6 +45,7 @@ const HowImage = styled.div`
 `;
 
 const HowText = styled.div`
+  ${typography.textMR}
   text-align: center;
   margin-bottom: 40px;
   white-space: pre-wrap;
@@ -67,15 +66,11 @@ const HowSection = () => {
         </HowImage>
         <HowText>
             <HowHeadline>
-              <Typo type="textMB">
                 {'시간을 얼마나 쓰는지 보다 중요한 건,\n'}
                 {'시간을 '}<Highlight>어떻게</Highlight>{' 쓰느냐입니다.'}
-              </Typo>
             </HowHeadline>
-            <Typo type="textMR">
-              {'수천만건의 데이터는 자녀분의 시간을 더욱\n'}
-              {'효율적으로 사용할 수 있도록 만들어줍니다.'}
-            </Typo>
+            {'수천만건의 데이터는 자녀분의 시간을 더욱\n'}
+            {'효율적으로 사용할 수 있도록 만들어줍니다.'}
         </HowText>
       </HowLayout>
     </Section>
