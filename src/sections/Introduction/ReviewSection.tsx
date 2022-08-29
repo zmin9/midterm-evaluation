@@ -50,9 +50,11 @@ const ProfileImg = styled.div<Pick<ReviewInfo, 'imgBgColor'>>`
 `;
 
 const ProfileAge = styled.span`
+  color: ${({ theme }) => theme.text5};
   ${typography.textSR}
 `;
 const ProfileName = styled.span`
+  color: ${({ theme }) => theme.text5};
   ${typography.textSB}
 `;
 const ReviewContent = styled.span`
