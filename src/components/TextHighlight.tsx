@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
-const TextHighlight = styled.span`
+const TextHighlight = styled.strong`
+  font-weight: inherit;
   color: ${({ theme }) => theme.highlight};
 `;
 

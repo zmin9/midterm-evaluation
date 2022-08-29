@@ -19,7 +19,7 @@ const WhoSection = () => {
         </a>
       </Section.Content>
       <Section.Card>
-        <ImagesByMediaQuery small={Store1stImgS} large={Store1stImgL} widthS={335} widthL={944} alt="어플 순위 1위 수학대왕"/>
+        <ImagesByMediaQuery small={Store1stImgS} large={Store1stImgL} widthS={335} widthL={944} alt="어플 순위 1위 수학대왕" priority/>
       </Section.Card>
     </Section>
   );

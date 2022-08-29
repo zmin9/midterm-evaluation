@@ -1,52 +1,48 @@
-import Image, { StaticImageData } from 'next/image';
+import { StaticImageData } from 'next/image';
 import styled from 'styled-components';
 import mediaQuery from '../../styles/mediaQuery';
+import ImageHavingMaxWidth from './ImageHavingMaxWidth';
 
 type ImagesProps = {
   small: StaticImageData,
   large: StaticImageData,
   widthS: number,
   widthL: number,
-  alt: string
+  alt: string,
+  priority?: boolean,
 };
 
-const ImagesContainer = styled.div<{ width: number }>`
-  width: calc(100vw - 40px);
-  ${mediaQuery.small} {
-    width: ${({ width }) => width + 'px'};
-  }
-`;
-
 const Images = styled.div`
-  width: fit-content;
-  ${ImagesContainer}.small {
-    display: inline-block;
+  width: 100%;
+
+  ${mediaQuery.small} {
+    width: auto;
   }
 
-  ${ImagesContainer}.large {
+  .small {
+    display: block;
+  }
+
+  .large {
     display: none;
   }
 
   ${mediaQuery.large} {
-    ${ImagesContainer}.small {
+    .small {
       display: none;
     }
 
-    ${ImagesContainer}.large {
-      display: inline-block;
+    .large {
+      display: block;
     }
   }
 `;
 
-const ImagesByMediaQuery = ({ small, large, alt, widthS, widthL }: ImagesProps) => {
+const ImagesByMediaQuery = ({ small, large, alt, widthS, widthL, priority = false }: ImagesProps) => {
   return (
     <Images>
-      <ImagesContainer className="small" width={widthS}>
-        <Image src={small} layout="responsive" alt={alt}/>
-      </ImagesContainer>
-      <ImagesContainer className="large" width={widthL}>
-        <Image src={large} layout="responsive" alt={alt}/>
-      </ImagesContainer>
+      <ImageHavingMaxWidth className="small" src={small} alt={alt} maxWidth={widthS} priority={priority}/>
+      <ImageHavingMaxWidth className="large" src={large} alt={alt} maxWidth={widthL} priority={priority}/>
     </Images>
   );
 };

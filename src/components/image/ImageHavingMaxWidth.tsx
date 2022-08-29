@@ -5,7 +5,9 @@ import mediaQuery from '../../styles/mediaQuery';
 type ImageProps = {
   src: StaticImageData,
   alt: string,
-  maxWidth: number
+  maxWidth: number,
+  className?: string,
+  priority?: boolean,
 };
 
 const ImageContainer = styled.div<Pick<ImageProps, 'maxWidth'>>`
@@ -15,10 +17,10 @@ const ImageContainer = styled.div<Pick<ImageProps, 'maxWidth'>>`
   }
 `;
 
-const ImageHavingMaxWidth = ({ src, alt, maxWidth }: ImageProps) => {
+const ImageHavingMaxWidth = ({ src, alt, maxWidth, className = '', priority = false }: ImageProps) => {
   return (
-    <ImageContainer maxWidth={maxWidth}>
-      <Image src={src} alt={alt} layout="responsive"/>
+    <ImageContainer className={className} maxWidth={maxWidth}>
+      <Image src={src} alt={alt} layout="responsive" priority={priority}/>
     </ImageContainer>
   );
 };

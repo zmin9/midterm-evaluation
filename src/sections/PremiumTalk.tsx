@@ -2,11 +2,38 @@ import Section from '../components/Section';
 import styled from 'styled-components';
 import ImageHavingMaxWidth from '../components/image/ImageHavingMaxWidth';
 import KakaoTalkImg from '../../public/images/kakaotalk.png';
+import typography from '../styles/typography';
+import mediaQuery from '../styles/mediaQuery';
 
 const ImageContainer = styled.div`
   margin: 24px 5px 0 0;
   & > * {
     margin: 0 auto;
+  }
+`;
+
+
+const ResponseButton = styled.button`
+  background-color: ${({ theme }) => theme.button};
+  color: ${({ theme }) => theme.onButton};
+  ${typography.textMB}
+
+  position: sticky;
+  bottom: 20px;
+  display: block;
+  margin: 0 auto 40px;
+
+  border-radius: 9999px;
+  border: none;
+  padding: 12px 0;
+
+  width: calc(100% - 40px);
+  max-width: 732px;
+
+
+  ${mediaQuery.large} {
+    ${typography.H3}
+    padding: 15px 0;
   }
 `;
 
@@ -23,6 +50,9 @@ const PremiumTalk = () => {
           <ImageHavingMaxWidth src={KakaoTalkImg} alt="프리미엄 결제 요청 알림톡" maxWidth={327}/>
         </ImageContainer>
       </Section>
+      <ResponseButton onClick={() => alert('결제 성공')}>
+        자녀분의 요청에 응답하기
+      </ResponseButton>
     </>
   );
 };
