@@ -11,9 +11,8 @@ import DifferentImgS from '../../../public/images/different-refund-small.png';
 import DifferentImgL from '../../../public/images/different-refund-large.png';
 
 const AlignCenter = styled.div`
-  & > * {
-    margin: 0 auto;
-  }
+  display: flex;
+  justify-content: center;
 `;
 
 const RefundGraphSection = styled.section`

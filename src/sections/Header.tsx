@@ -50,7 +50,7 @@ const Header = () => {
       <HeaderSubTitle>
         50만명이 선택한 인공지능 수학
       </HeaderSubTitle>
-      <Image src={HeaderImg} layout="fill" objectFit="cover" objectPosition="bottom" quality={100} priority placeholder='blur'/>
+      <Image src={HeaderImg} layout="fill" objectFit="cover" objectPosition="bottom" quality={100} priority/>
     </PageHeader>
   );
 };
