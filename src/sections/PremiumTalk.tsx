@@ -1,9 +1,9 @@
-import Section from '../components/Section';
-import styled from 'styled-components';
-import ImageHavingMaxWidth from '../components/image/ImageHavingMaxWidth';
 import KakaoTalkImg from '../../public/images/kakaotalk.png';
-import typography from '../styles/typography';
+import Section from '../components/Section';
+import ImageHavingMaxWidth from '../components/image/ImageHavingMaxWidth';
 import mediaQuery from '../styles/mediaQuery';
+import typography from '../styles/typography';
+import styled from 'styled-components';
 
 const ImageContainer = styled.div`
   margin: 24px 5px 0 0;

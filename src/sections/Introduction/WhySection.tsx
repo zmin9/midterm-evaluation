@@ -1,6 +1,6 @@
 import Section from '../../components/Section';
-import styled from 'styled-components';
 import mediaQuery from '../../styles/mediaQuery';
+import styled from 'styled-components';
 
 const VideoContainer = styled.div`
   position: relative;
@@ -22,7 +22,6 @@ const Iframe = styled.iframe`
   height: 100%;
 `;
 
-
 const WhySection = () => {
   return (
     <Section bgColor="bg1" paddingT={60}>
@@ -35,10 +34,11 @@ const WhySection = () => {
         {'인공지능 수학 학습앱'}
       </Section.Content>
       <VideoContainer>
-        <Iframe src="https://www.youtube-nocookie.com/embed/kb2fdVLIkSU"/>
+        <Iframe src="https://www.youtube.com/embed/kb2fdVLIkSU"/>
       </VideoContainer>
     </Section>
   );
 };
 
 export default WhySection;
+

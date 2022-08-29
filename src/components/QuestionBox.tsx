@@ -1,9 +1,9 @@
-import styled from 'styled-components';
-import mediaQuery from '../styles/mediaQuery';
-import { PropsWithChildren } from 'react';
-import Image from 'next/image';
-import typography from '../styles/typography';
 import QImg from '../../public/images/Q.png';
+import mediaQuery from '../styles/mediaQuery';
+import typography from '../styles/typography';
+import Image from 'next/image';
+import { PropsWithChildren } from 'react';
+import styled from 'styled-components';
 
 const Container = styled.div`
   border-radius: 5px;

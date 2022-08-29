@@ -1,10 +1,10 @@
+import ImprovingImgL from '../../../public/images/improving-graph-large.png';
+import ImprovingImgS from '../../../public/images/improving-graph-small.png';
 import Section from '../../components/Section';
-import styled from 'styled-components';
 import ImagesByMediaQuery from '../../components/image/ImagesByMediaQuery';
 import mediaQuery from '../../styles/mediaQuery';
 
-import ImprovingImgS from '../../../public/images/improving-graph-small.png';
-import ImprovingImgL from '../../../public/images/improving-graph-large.png';
+import styled from 'styled-components';
 
 const GraphDescription = styled.div`
   margin-top: 16px;

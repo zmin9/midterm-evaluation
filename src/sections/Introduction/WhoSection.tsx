@@ -1,8 +1,8 @@
+import Store1stImgL from '../../../public/images/store-1st-large.png';
+import Store1stImgS from '../../../public/images/store-1st-small.png';
 import Section from '../../components/Section';
 import Highlight from '../../components/TextHighlight';
 import ImagesByMediaQuery from '../../components/image/ImagesByMediaQuery';
-import Store1stImgS from '../../../public/images/store-1st-small.png';
-import Store1stImgL from '../../../public/images/store-1st-large.png';
 
 const WhoSection = () => {
   return (

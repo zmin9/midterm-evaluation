@@ -1,8 +1,8 @@
+import HowSection from './HowSection';
 import ReviewSection from './ReviewSection';
 import WhatSection from './WhatSection';
-import HowSection from './HowSection';
-import WhySection from './WhySection';
 import WhoSection from './WhoSection';
+import WhySection from './WhySection';
 
 const Introduction = () => {
   return (

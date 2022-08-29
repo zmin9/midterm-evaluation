@@ -1,14 +1,13 @@
-import Section from '../../components/Section';
-import QuestionBox from '../../components/QuestionBox';
-import Highlight from '../../components/TextHighlight';
-import styled from 'styled-components';
-import ImagesByMediaQuery from '../../components/image/ImagesByMediaQuery';
-import ImageHavingMaxWidth from '../../components/image/ImageHavingMaxWidth';
-
+import DifferentImgL from '../../../public/images/different-refund-large.png';
+import DifferentImgS from '../../../public/images/different-refund-small.png';
 import NaverPayImg from '../../../public/images/naver-pay.png';
 import BenefitImg from '../../../public/images/store-benefit-graph.png';
-import DifferentImgS from '../../../public/images/different-refund-small.png';
-import DifferentImgL from '../../../public/images/different-refund-large.png';
+import QuestionBox from '../../components/QuestionBox';
+import Section from '../../components/Section';
+import Highlight from '../../components/TextHighlight';
+import ImageHavingMaxWidth from '../../components/image/ImageHavingMaxWidth';
+import ImagesByMediaQuery from '../../components/image/ImagesByMediaQuery';
+import styled from 'styled-components';
 
 const AlignCenter = styled.div`
   display: flex;

@@ -1,12 +1,12 @@
-import styled from 'styled-components';
-import mediaQuery from '../../styles/mediaQuery';
-import Section, { SectionContainer } from '../../components/Section';
-import Image, { StaticImageData } from 'next/image';
-import typography from '../../styles/typography';
 
 import ReviewerImg0 from '../../../public/images/reviewer_0.png';
 import ReviewerImg1 from '../../../public/images/reviewer_1.png';
 import ReviewerImg2 from '../../../public/images/reviewer_2.png';
+import Section, { SectionContainer } from '../../components/Section';
+import mediaQuery from '../../styles/mediaQuery';
+import typography from '../../styles/typography';
+import Image, { StaticImageData } from 'next/image';
+import styled from 'styled-components';
 
 const ReviewSectionContainer = styled(SectionContainer)`
   background: ${({ theme }) => theme.purpleGradient};

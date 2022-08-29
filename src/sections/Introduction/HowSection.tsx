@@ -1,10 +1,10 @@
-import Highlight from '../../components/TextHighlight';
-import Section from '../../components/Section';
-import mediaQuery from '../../styles/mediaQuery';
-import styled from 'styled-components';
-import typography from '../../styles/typography';
 import MathkingSeviceImg from '../../../public/images/what-mathking-does.png';
+import Section from '../../components/Section';
+import Highlight from '../../components/TextHighlight';
 import ImageHavingMaxWidth from '../../components/image/ImageHavingMaxWidth';
+import mediaQuery from '../../styles/mediaQuery';
+import typography from '../../styles/typography';
+import styled from 'styled-components';
 
 const HowLayout = styled.span`
   ${mediaQuery.large} {

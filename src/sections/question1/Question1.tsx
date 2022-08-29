@@ -1,8 +1,8 @@
+import QuestionBox from '../../components/QuestionBox';
+import Section from '../../components/Section';
+import Highlight from '../../components/TextHighlight';
 import DifferenceSection from './DifferenceSection';
 import ProductSection from './ProductSection';
-import QuestionBox from '../../components/QuestionBox';
-import Highlight from '../../components/TextHighlight';
-import Section from '../../components/Section';
 
 const Question1 = () => {
   return (

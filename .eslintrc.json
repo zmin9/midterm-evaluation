@@ -22,6 +22,14 @@
     "react/react-in-jsx-scope": "off",
     "react/display-name": "off",
     "import/named": "off",
+    "import/order": [
+      "error",
+      {
+        "alphabetize": {
+          "order": "asc"
+        }
+      }
+    ],
     "@typescript-eslint/comma-dangle": "off"
   },
   "ignorePatterns": [
