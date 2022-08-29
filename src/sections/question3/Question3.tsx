@@ -1,15 +1,13 @@
-import Section from '../../components/Section';
-import QuestionBox from '../../components/QuestionBox';
-import Highlight from '../../components/TextHighlight';
-import ImagesByMediaQuery from '../../components/image/ImagesByMediaQuery';
-import styled from 'styled-components';
-import ImageHavingMaxWidth from '../../components/image/ImageHavingMaxWidth';
-
-import AchievementImgS from '../../../public/images/achievement_small.png';
 import AchievementImgL from '../../../public/images/achievement_large.png';
-
+import AchievementImgS from '../../../public/images/achievement_small.png';
 import CycleImg from '../../../public/images/cycle.png';
+import QuestionBox from '../../components/QuestionBox';
+import Section from '../../components/Section';
+import Highlight from '../../components/TextHighlight';
+import ImageHavingMaxWidth from '../../components/image/ImageHavingMaxWidth';
+import ImagesByMediaQuery from '../../components/image/ImagesByMediaQuery';
 import typography from '../../styles/typography';
+import styled from 'styled-components';
 
 const AchievementText = styled.h3`
   ${typography.textMB}

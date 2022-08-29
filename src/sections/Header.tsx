@@ -1,8 +1,8 @@
-import styled from 'styled-components';
-import mediaQuery from '../styles/mediaQuery';
-import Image from 'next/image';
-import typography from '../styles/typography';
 import HeaderImg from '../../public/images/header-bg.png';
+import mediaQuery from '../styles/mediaQuery';
+import typography from '../styles/typography';
+import Image from 'next/image';
+import styled from 'styled-components';
 
 const PageHeader = styled.header`
   color: ${({ theme }) => theme.text4};

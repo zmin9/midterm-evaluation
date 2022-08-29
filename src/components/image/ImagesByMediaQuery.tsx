@@ -1,7 +1,7 @@
-import { StaticImageData } from 'next/image';
-import styled from 'styled-components';
 import mediaQuery from '../../styles/mediaQuery';
 import ImageHavingMaxWidth from './ImageHavingMaxWidth';
+import { StaticImageData } from 'next/image';
+import styled from 'styled-components';
 
 type ImagesProps = {
   small: StaticImageData,

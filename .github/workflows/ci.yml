@@ -6,8 +6,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-        with:
-          ref: dev
+
+      - run: yarn set version 3.2.2
       - run: yarn install
       - name: eslint test
         run: yarn eslint .

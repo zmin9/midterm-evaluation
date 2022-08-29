@@ -1,6 +1,6 @@
-import styled from 'styled-components';
 import mediaQuery from '../styles/mediaQuery';
 import typography from '../styles/typography';
+import styled from 'styled-components';
 
 const FooterContainer = styled.footer`
   background-color: ${({ theme }) => theme.bg1};

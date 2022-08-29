@@ -1,14 +1,14 @@
-import Highlight from '../../components/TextHighlight';
-import Section from '../../components/Section';
-import mediaQuery from '../../styles/mediaQuery';
-import styled from 'styled-components';
-import Image, { StaticImageData } from 'next/image';
-import typography from '../../styles/typography';
-
 import Book3dImg from '../../../public/images/3d_book.png';
-import Video3dImg from '../../../public/images/3d_video.png';
 import Money3dImg from '../../../public/images/3d_money.png';
 import Test3dImg from '../../../public/images/3d_test.png';
+import Video3dImg from '../../../public/images/3d_video.png';
+import Section from '../../components/Section';
+import Highlight from '../../components/TextHighlight';
+import mediaQuery from '../../styles/mediaQuery';
+import typography from '../../styles/typography';
+
+import Image, { StaticImageData } from 'next/image';
+import styled from 'styled-components';
 
 const ProductionItem = styled.div`
   ${typography.textSR}
