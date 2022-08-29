@@ -1,13 +1,12 @@
 name: CI
 on:
   pull_request:
-    branches:
-      - dev
 jobs:
   pull_request_test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+
       - run: yarn set version 3.2.2
       - run: yarn install
       - name: eslint test
