@@ -1,4 +1,5 @@
-import { css } from 'styled-components';
+import { PropsWithChildren } from 'react';
+import styled, { css } from 'styled-components';
 
 const fontWeight = {
   bold: 700,
@@ -34,5 +35,18 @@ const typography = {
   textXSR: getFontCss(12, 18, 'regular'),
 };
 
-export type Typography = keyof typeof typography;
-export default typography;
+type TypoType = keyof typeof typography;
+type TextProps = {
+  type: TypoType,
+};
+
+const CustomText = styled.span<TextProps>`
+  ${({ type }) => typography[type]}
+  & > span {
+    color: ${({ theme }) => theme.highlight};
+  }
+`;
+
+const Text = ({ children, type }: PropsWithChildren<TextProps>) => <CustomText type={type}>{children}</CustomText>;
+
+export default Text;

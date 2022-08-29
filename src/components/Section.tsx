@@ -1,5 +1,5 @@
 import mediaQuery from '../styles/mediaQuery';
-import typography from '../styles/typography';
+import Text from './Text';
 import { createContext, PropsWithChildren, useContext } from 'react';
 import styled from 'styled-components';
 
@@ -24,12 +24,10 @@ export const SectionContainer = styled.section<SectionProps>`
 
 const SectionSubtitle = styled.span`
   color: ${({ theme }) => theme.highlight};
-  ${typography.textSR}
 `;
 
 const SectionTitle = styled.h2`
   color: ${({ theme }) => theme.headline};
-  ${typography.H3}
 
   ${SectionSubtitle} + & {
     margin-top: 4px;
@@ -44,7 +42,6 @@ const SectionTitle = styled.h2`
 
 const SectionContent = styled.p`
   color: ${({ theme }) => theme.text1};
-  ${typography.textSR}
   margin-top: 12px;
 
   white-space: pre-wrap;
@@ -59,7 +56,7 @@ const SectionCard = styled.div<Pick<SectionProps, 'bgColor'>>`
 
   margin-top: 24px;
   border-radius: 5px;
-  
+
   display: flex;
   justify-content: center;
 `;
@@ -78,17 +75,23 @@ const Section = ({ children, bgColor = 'bg1', paddingT = 0, paddingB = 0 }: Prop
 
 Section.Subtitle = ({ children }: PropsWithChildren) => (
   <SectionSubtitle>
-    {children}
+    <Text type="textSR">
+      {children}
+    </Text>
   </SectionSubtitle>
 );
 Section.Title = ({ children }: PropsWithChildren) => (
   <SectionTitle>
-    {children}
+    <Text type="H3">
+      {children}
+    </Text>
   </SectionTitle>
 );
 Section.Content = ({ children }: PropsWithChildren) => (
   <SectionContent>
-    {children}
+    <Text type="textSR">
+      {children}
+    </Text>
   </SectionContent>
 );
 

@@ -3,15 +3,13 @@ import Money3dImg from '../../../public/images/3d_money.png';
 import Test3dImg from '../../../public/images/3d_test.png';
 import Video3dImg from '../../../public/images/3d_video.png';
 import Section from '../../components/Section';
-import Highlight from '../../components/TextHighlight';
+import Text from '../../components/Text';
 import mediaQuery from '../../styles/mediaQuery';
-import typography from '../../styles/typography';
 
 import Image, { StaticImageData } from 'next/image';
 import styled from 'styled-components';
 
 const ProductionItem = styled.div`
-  ${typography.textSR}
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -86,7 +84,6 @@ const ItemImgContainer = styled.div<Pick<Product, 'imgBgColor'>>`
 
 const ProductionText = styled.h3`
   text-align: center;
-  ${typography.textMB}
   color: ${({ theme }) => theme.text2};
   margin-top: 60px;
   margin-bottom: 80px;
@@ -142,10 +139,14 @@ const Products = () => {
             <ProductionItem key={item.title}>
               <ItemText>
                 <ItemTitle>
-                  {item.title}
+                  <Text type='textSR'>
+                    {item.title}
+                  </Text>
                 </ItemTitle>
                 <ItemDesc>
-                  {item.description}
+                  <Text type='textSR'>
+                    {item.description}
+                  </Text>
                 </ItemDesc>
               </ItemText>
               <ItemImgContainer imgBgColor={item.imgBgColor}>
@@ -158,10 +159,10 @@ const Products = () => {
         }
       </Productions>
       <ProductionText>
-        {'이 모든 구성이 수학대왕 '}
-        <Highlight text='프리미엄'/>
-        {'에 \n'}
-        포함되어 있습니다.
+        <Text type='textMB'>
+          {'이 모든 구성이 수학대왕 '}<span>프리미엄</span>{'에 \n'}
+          포함되어 있습니다.
+        </Text>
       </ProductionText>
     </Section>
   );

@@ -1,10 +1,9 @@
-
 import ReviewerImg0 from '../../../public/images/reviewer_0.png';
 import ReviewerImg1 from '../../../public/images/reviewer_1.png';
 import ReviewerImg2 from '../../../public/images/reviewer_2.png';
 import Section, { SectionContainer } from '../../components/Section';
+import Text from '../../components/Text';
 import mediaQuery from '../../styles/mediaQuery';
-import typography from '../../styles/typography';
 import Image, { StaticImageData } from 'next/image';
 import styled from 'styled-components';
 
@@ -35,6 +34,7 @@ const ReviewCard = styled.div`
 `;
 
 const ReviewerProfile = styled.div`
+  color: ${({ theme }) => theme.text5};
   margin-bottom: 8px;
   display: flex;
   align-items: center;
@@ -47,18 +47,6 @@ const ProfileImg = styled.div<Pick<ReviewInfo, 'imgBgColor'>>`
   height: 40px;
   border-radius: 50%;
   background-color: ${({ imgBgColor }) => imgBgColor};
-`;
-
-const ProfileAge = styled.span`
-  color: ${({ theme }) => theme.text5};
-  ${typography.textSR}
-`;
-const ProfileName = styled.span`
-  color: ${({ theme }) => theme.text5};
-  ${typography.textSB}
-`;
-const ReviewContent = styled.span`
-  ${typography.textSR}
 `;
 
 type ReviewInfo = {
@@ -111,10 +99,10 @@ const ReviewSection = () => {
                 <ProfileImg imgBgColor={imgBgColor}>
                   <Image src={img} alt={`프로필사진_${lastName}`} layout="fill" objectFit="cover"/>
                 </ProfileImg>
-                <ProfileAge>{age}</ProfileAge>
-                <ProfileName>{`\0 ${lastName}OO 학생`}</ProfileName>
+                <Text type='textSR'>{age}</Text>
+                <Text type='textSB'>{`\0 ${lastName}OO 학생`}</Text>
               </ReviewerProfile>
-              <ReviewContent>{content}</ReviewContent>
+              <Text type='textSR'>{content}</Text>
             </ReviewCard>,
           )
         }
