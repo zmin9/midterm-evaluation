@@ -4,11 +4,13 @@
     "airbnb-typescript",
     "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended",
-    "plugin:import/recommended"
+    "plugin:import/recommended",
+    "plugin:import/typescript"
   ],
   "parser": "@typescript-eslint/parser",
   "plugins": [
-    "@typescript-eslint"
+    "@typescript-eslint",
+    "import"
   ],
   "parserOptions": {
     "project": [
@@ -25,14 +27,26 @@
     "import/order": [
       "error",
       {
+        "groups": ["builtin", "external", "internal", "parent", "sibling"],
         "alphabetize": {
           "order": "asc"
-        }
+        },
+        "newlines-between": "always"
       }
     ],
     "@typescript-eslint/comma-dangle": "off"
   },
+  "settings": {
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"]
+    },
+    "import/resolver": {
+      "typescript": {
+        "project": "./tsconfig.json"
+      }
+    }
+  },
   "ignorePatterns": [
-    "next.config.js"
+    "*.js"
   ]
 }

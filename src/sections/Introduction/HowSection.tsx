@@ -1,10 +1,10 @@
+import styled from 'styled-components';
+
 import MathkingSeviceImg from '../../../public/images/what-mathking-does.png';
 import Section from '../../components/Section';
-import Highlight from '../../components/TextHighlight';
+import Text from '../../components/Text';
 import ImageHavingMaxWidth from '../../components/image/ImageHavingMaxWidth';
 import mediaQuery from '../../styles/mediaQuery';
-import typography from '../../styles/typography';
-import styled from 'styled-components';
 
 const HowLayout = styled.span`
   ${mediaQuery.large} {
@@ -20,12 +20,7 @@ const HowLayout = styled.span`
 `;
 
 const HowHeadline = styled.h3`
-  ${typography.textMB}
   margin-bottom: 24px;
-
-  ${mediaQuery.large} {
-    ${typography.H3}
-  }
 `;
 const HowImage = styled.div`
   margin-bottom: 80px;
@@ -48,7 +43,6 @@ const HowImage = styled.div`
 `;
 
 const HowText = styled.div`
-  ${typography.textMR}
   text-align: center;
   margin-bottom: 40px;
   white-space: pre-wrap;
@@ -67,11 +61,15 @@ const HowSection = () => {
         </HowImage>
         <HowText>
           <HowHeadline>
-            {'시간을 얼마나 쓰는지 보다 중요한 건,\n'}
-            {'시간을 '}<Highlight text='어떻게'/>{' 쓰느냐입니다.'}
+            <Text type='H3'>
+              {'시간을 얼마나 쓰는지 보다 중요한 건,\n'}
+              {'시간을 '}<span>어떻게</span>{' 쓰느냐입니다.'}
+            </Text>
           </HowHeadline>
-          {'수천만건의 데이터는 자녀분의 시간을 더욱\n'}
-          {'효율적으로 사용할 수 있도록 만들어줍니다.'}
+          <Text type='textMR'>
+            {'수천만건의 데이터는 자녀분의 시간을 더욱\n'}
+            {'효율적으로 사용할 수 있도록 만들어줍니다.'}
+          </Text>
         </HowText>
       </HowLayout>
     </Section>

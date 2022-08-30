@@ -1,61 +1,17 @@
+import Image, { StaticImageData } from 'next/image';
+import styled from 'styled-components';
+
 import Book3dImg from '../../../public/images/3d_book.png';
 import Money3dImg from '../../../public/images/3d_money.png';
 import Test3dImg from '../../../public/images/3d_test.png';
 import Video3dImg from '../../../public/images/3d_video.png';
+import Layout from '../../components/Layout';
 import Section from '../../components/Section';
-import Highlight from '../../components/TextHighlight';
+import Text from '../../components/Text';
 import mediaQuery from '../../styles/mediaQuery';
-import typography from '../../styles/typography';
 
-import Image, { StaticImageData } from 'next/image';
-import styled from 'styled-components';
-
-const ProductionItem = styled.div`
-  ${typography.textSR}
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  ${mediaQuery.large} {
-    flex-direction: column-reverse;
-    align-items: start;
-  }
-
-  & + & {
-    margin-top: 24px;
-
-    ${mediaQuery.large} {
-      margin-top: 0;
-    }
-  }
-`;
-
-const ItemText = styled.div`
-  display: flex;
-  flex-direction: column;
-
-  & > * + * {
-    margin-top: 8px;
-  }
-
-  ${mediaQuery.large} {
-    margin-top: 16px;
-  }
-`;
 const Productions = styled.div`
-  display: flex;
-  flex-direction: column;
   margin-right: 10px;
-
-  ${mediaQuery.large} {
-    flex-direction: row;
-    justify-content: space-between;
-    margin-right: -56px;
-
-    & > * {
-      flex: 1 1 0;
-    }
-  }
 `;
 
 const ItemTitle = styled.span`
@@ -68,14 +24,14 @@ const ItemDesc = styled.span`
 `;
 
 const ItemImgContainer = styled.div<Pick<Product, 'imgBgColor'>>`
+  position: relative;
   width: 64px;
   height: 64px;
   background-color: ${({ imgBgColor }) => imgBgColor};
   border-radius: 12px;
   padding: 0 14px;
 
-  display: flex;
-  align-items: center;
+  margin: auto 0;
 
   div {
     position: relative;
@@ -86,7 +42,6 @@ const ItemImgContainer = styled.div<Pick<Product, 'imgBgColor'>>`
 
 const ProductionText = styled.h3`
   text-align: center;
-  ${typography.textMB}
   color: ${({ theme }) => theme.text2};
   margin-top: 60px;
   margin-bottom: 80px;
@@ -137,31 +92,42 @@ const Products = () => {
   return (
     <Section bgColor="bg1" paddingT={60}>
       <Productions>
-        {
-          products.map((item) => (
-            <ProductionItem key={item.title}>
-              <ItemText>
-                <ItemTitle>
-                  {item.title}
-                </ItemTitle>
-                <ItemDesc>
-                  {item.description}
-                </ItemDesc>
-              </ItemText>
-              <ItemImgContainer imgBgColor={item.imgBgColor}>
-                <div>
-                  <Image src={item.img} alt={item.title + '_icon'} layout="fill" objectFit="contain"/>
-                </div>
-              </ItemImgContainer>
-            </ProductionItem>
-          ))
-        }
+        <Layout column={{ small: 1, large: 4 }} gap={24}>
+          {
+            products.map((item) => (
+              <Layout key={item.title}
+                      column={{ small: 2, large: 1 }}
+                      gap={16}
+                      spaceBetween
+                      flexDirection={{ small: 'row', large: 'column-reverse' }}
+              >
+                <Layout column={1} gap={8}>
+                  <ItemTitle>
+                    <Text type="textSR">
+                      {item.title}
+                    </Text>
+                  </ItemTitle>
+                  <ItemDesc>
+                    <Text type="textSR">
+                      {item.description}
+                    </Text>
+                  </ItemDesc>
+                </Layout>
+                <ItemImgContainer imgBgColor={item.imgBgColor}>
+                  <div>
+                    <Image src={item.img} alt={item.title + '_icon'} layout="fill" objectFit="contain"/>
+                  </div>
+                </ItemImgContainer>
+              </Layout>
+            ))
+          }
+        </Layout>
       </Productions>
       <ProductionText>
-        {'이 모든 구성이 수학대왕 '}
-        <Highlight text='프리미엄'/>
-        {'에 \n'}
-        포함되어 있습니다.
+        <Text type="textMB">
+          {'이 모든 구성이 수학대왕 '}<span>프리미엄</span>{'에 \n'}
+          포함되어 있습니다.
+        </Text>
       </ProductionText>
     </Section>
   );

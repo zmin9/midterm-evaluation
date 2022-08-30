@@ -1,6 +1,7 @@
+import styled from 'styled-components';
+
 import Section from '../../components/Section';
 import mediaQuery from '../../styles/mediaQuery';
-import styled from 'styled-components';
 
 const VideoContainer = styled.div`
   position: relative;

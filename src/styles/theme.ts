@@ -1,5 +1,6 @@
-import palette from './palette';
 import { DefaultTheme } from 'styled-components';
+
+import palette from './palette';
 
 const theme: DefaultTheme = {
   bg1: palette.white,

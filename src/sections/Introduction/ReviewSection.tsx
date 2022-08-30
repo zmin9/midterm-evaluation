@@ -1,12 +1,13 @@
+import Image, { StaticImageData } from 'next/image';
+import styled from 'styled-components';
 
 import ReviewerImg0 from '../../../public/images/reviewer_0.png';
 import ReviewerImg1 from '../../../public/images/reviewer_1.png';
 import ReviewerImg2 from '../../../public/images/reviewer_2.png';
+import Layout from '../../components/Layout';
 import Section, { SectionContainer } from '../../components/Section';
+import Text from '../../components/Text';
 import mediaQuery from '../../styles/mediaQuery';
-import typography from '../../styles/typography';
-import Image, { StaticImageData } from 'next/image';
-import styled from 'styled-components';
 
 const ReviewSectionContainer = styled(SectionContainer)`
   background: ${({ theme }) => theme.purpleGradient};
@@ -18,12 +19,8 @@ const ReviewSectionContainer = styled(SectionContainer)`
 
 const Reviews = styled.div`
   margin: 24px 8px 0;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
 
   ${mediaQuery.large} {
-    flex-direction: row;
     margin: 24px -18px 0;
   }
 `;
@@ -35,6 +32,7 @@ const ReviewCard = styled.div`
 `;
 
 const ReviewerProfile = styled.div`
+  color: ${({ theme }) => theme.text5};
   margin-bottom: 8px;
   display: flex;
   align-items: center;
@@ -47,18 +45,6 @@ const ProfileImg = styled.div<Pick<ReviewInfo, 'imgBgColor'>>`
   height: 40px;
   border-radius: 50%;
   background-color: ${({ imgBgColor }) => imgBgColor};
-`;
-
-const ProfileAge = styled.span`
-  color: ${({ theme }) => theme.text5};
-  ${typography.textSR}
-`;
-const ProfileName = styled.span`
-  color: ${({ theme }) => theme.text5};
-  ${typography.textSB}
-`;
-const ReviewContent = styled.span`
-  ${typography.textSR}
 `;
 
 type ReviewInfo = {
@@ -104,20 +90,22 @@ const ReviewSection = () => {
         {'학생들의 후기'}
       </Section.Title>
       <Reviews>
-        {
-          reviews.map(({ lastName, content, age, img, imgBgColor }: ReviewInfo) =>
-            <ReviewCard key={lastName + age}>
-              <ReviewerProfile>
-                <ProfileImg imgBgColor={imgBgColor}>
-                  <Image src={img} alt={`프로필사진_${lastName}`} layout="fill" objectFit="cover"/>
-                </ProfileImg>
-                <ProfileAge>{age}</ProfileAge>
-                <ProfileName>{`\0 ${lastName}OO 학생`}</ProfileName>
-              </ReviewerProfile>
-              <ReviewContent>{content}</ReviewContent>
-            </ReviewCard>,
-          )
-        }
+        <Layout column={{ small: 1, large: 3 }} gap={12}>
+          {
+            reviews.map(({ lastName, content, age, img, imgBgColor }: ReviewInfo) =>
+              <ReviewCard key={lastName + age}>
+                <ReviewerProfile>
+                  <ProfileImg imgBgColor={imgBgColor}>
+                    <Image src={img} alt={`프로필사진_${lastName}`} layout="fill" objectFit="cover"/>
+                  </ProfileImg>
+                  <Text type="textSR">{age}</Text>
+                  <Text type="textSB">{`\0 ${lastName}OO 학생`}</Text>
+                </ReviewerProfile>
+                <Text type="textSR">{content}</Text>
+              </ReviewCard>,
+            )
+          }
+        </Layout>
       </Reviews>
     </ReviewSectionContainer>
   );

@@ -1,13 +1,13 @@
+import styled from 'styled-components';
+
 import DifferentImgL from '../../../public/images/different-refund-large.png';
 import DifferentImgS from '../../../public/images/different-refund-small.png';
 import NaverPayImg from '../../../public/images/naver-pay.png';
 import BenefitImg from '../../../public/images/store-benefit-graph.png';
 import QuestionBox from '../../components/QuestionBox';
 import Section from '../../components/Section';
-import Highlight from '../../components/TextHighlight';
 import ImageHavingMaxWidth from '../../components/image/ImageHavingMaxWidth';
 import ImagesByMediaQuery from '../../components/image/ImagesByMediaQuery';
-import styled from 'styled-components';
 
 const AlignCenter = styled.div`
   display: flex;
@@ -28,7 +28,7 @@ const Question2 = () => {
     <>
       <Section bgColor="bg2" paddingT={60}>
         <QuestionBox>
-          {'수학대왕 '}<Highlight text='프리미엄'/>{'은 \n'}
+          {'수학대왕 '}<span>프리미엄</span>{'은 \n'}
           {'왜 다른가요?'}
         </QuestionBox>
       </Section>

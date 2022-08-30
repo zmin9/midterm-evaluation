@@ -1,6 +1,7 @@
-import mediaQuery from '../../styles/mediaQuery';
 import Image, { StaticImageData } from 'next/image';
 import styled from 'styled-components';
+
+import mediaQuery from '../../styles/mediaQuery';
 
 type ImageProps = {
   src: StaticImageData,

@@ -2294,6 +2294,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@pkgr/utils@npm:^2.3.1":
+  version: 2.3.1
+  resolution: "@pkgr/utils@npm:2.3.1"
+  dependencies:
+    cross-spawn: ^7.0.3
+    is-glob: ^4.0.3
+    open: ^8.4.0
+    picocolors: ^1.0.0
+    tiny-glob: ^0.2.9
+    tslib: ^2.4.0
+  checksum: 118a1971120253740121a1db0a6658c21195b7da962acf9c124b507a3df707cfc97b0b84a16edcbd4352853b182e8337da9fc6e8e3d06c60d75ae4fb42321c75
+  languageName: node
+  linkType: hard
+
 "@pmmmwh/react-refresh-webpack-plugin@npm:^0.5.3":
   version: 0.5.7
   resolution: "@pmmmwh/react-refresh-webpack-plugin@npm:0.5.7"
@@ -5646,6 +5660,24 @@ __metadata:
   languageName: node
   linkType: hard
 
+"eslint-import-resolver-typescript@npm:^3.5.0":
+  version: 3.5.0
+  resolution: "eslint-import-resolver-typescript@npm:3.5.0"
+  dependencies:
+    debug: ^4.3.4
+    enhanced-resolve: ^5.10.0
+    get-tsconfig: ^4.2.0
+    globby: ^13.1.2
+    is-core-module: ^2.10.0
+    is-glob: ^4.0.3
+    synckit: ^0.8.3
+  peerDependencies:
+    eslint: "*"
+    eslint-plugin-import: "*"
+  checksum: 9719d1f68b7bb0eaf8939cff2d3b02b526949f73db744877de781640650dd4d0a17d934222b9ac69e27d9f363ee4569c1aa1a2a2aab6500257517f9bf7d25976
+  languageName: node
+  linkType: hard
+
 "eslint-module-utils@npm:^2.7.3":
   version: 2.7.4
   resolution: "eslint-module-utils@npm:2.7.4"
@@ -6503,6 +6535,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"get-tsconfig@npm:^4.2.0":
+  version: 4.2.0
+  resolution: "get-tsconfig@npm:4.2.0"
+  checksum: dfae3520bee20b71a651fdc93fd29901013dfc4df9fb41a423cf3efb4468c79087ef9d3bc3d0625b6486397730991d2a749eed4985d8ab411f481319c3e931e5
+  languageName: node
+  linkType: hard
+
 "gh-pages@npm:^4.0.0":
   version: 4.0.0
   resolution: "gh-pages@npm:4.0.0"
@@ -6609,6 +6648,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"globalyzer@npm:0.1.0":
+  version: 0.1.0
+  resolution: "globalyzer@npm:0.1.0"
+  checksum: 419a0f95ba542534fac0842964d31b3dc2936a479b2b1a8a62bad7e8b61054faa9b0a06ad9f2e12593396b9b2621cac93358d9b3071d33723fb1778608d358a1
+  languageName: node
+  linkType: hard
+
 "globby@npm:^11.0.4, globby@npm:^11.1.0":
   version: 11.1.0
   resolution: "globby@npm:11.1.0"
@@ -6623,6 +6669,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"globby@npm:^13.1.2":
+  version: 13.1.2
+  resolution: "globby@npm:13.1.2"
+  dependencies:
+    dir-glob: ^3.0.1
+    fast-glob: ^3.2.11
+    ignore: ^5.2.0
+    merge2: ^1.4.1
+    slash: ^4.0.0
+  checksum: c148fcda0c981f00fb434bb94ca258f0a9d23cedbde6fb3f37098e1abde5b065019e2c63fe2aa2fad4daf2b54bf360b4d0423d85fb3a63d09ed75a2837d4de0f
+  languageName: node
+  linkType: hard
+
 "globby@npm:^6.1.0":
   version: 6.1.0
   resolution: "globby@npm:6.1.0"
@@ -6633,6 +6692,13 @@ __metadata:
     pify: ^2.0.0
     pinkie-promise: ^2.0.0
   checksum: 18109d6b9d55643d2b98b59c3cfae7073ccfe39829632f353d516cc124d836c2ddebe48a23f04af63d66a621b6d86dd4cbd7e6af906f2458a7fe510ffc4bd424
+  languageName: node
+  linkType: hard
+
+"globrex@npm:^0.1.2":
+  version: 0.1.2
+  resolution: "globrex@npm:0.1.2"
+  checksum: adca162494a176ce9ecf4dd232f7b802956bb1966b37f60c15e49d2e7d961b66c60826366dc2649093cad5a0d69970cfa8875bd1695b5a1a2f33dcd2aa88da3c
   languageName: node
   linkType: hard
 
@@ -7167,7 +7233,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"is-core-module@npm:^2.8.1, is-core-module@npm:^2.9.0":
+"is-core-module@npm:^2.10.0, is-core-module@npm:^2.8.1, is-core-module@npm:^2.9.0":
   version: 2.10.0
   resolution: "is-core-module@npm:2.10.0"
   dependencies:
@@ -10277,6 +10343,7 @@ __metadata:
     "@typescript-eslint/parser": ^5.33.1
     eslint: ^8.22.0
     eslint-config-airbnb-typescript: ^17.0.0
+    eslint-import-resolver-typescript: ^3.5.0
     eslint-plugin-import: ^2.26.0
     eslint-plugin-jsx-a11y: ^6.6.1
     eslint-plugin-react: ^7.30.1
@@ -11832,6 +11899,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"synckit@npm:^0.8.3":
+  version: 0.8.4
+  resolution: "synckit@npm:0.8.4"
+  dependencies:
+    "@pkgr/utils": ^2.3.1
+    tslib: ^2.4.0
+  checksum: 83e054fe4494dab42114fc4ed36a11b85e18742d304ade3f40d3afb4ba4145d76183adba1f29e2c36e9a0a453b93a83e2387505f96a0efd901f562927a968c44
+  languageName: node
+  linkType: hard
+
 "tailwindcss@npm:^3.0.2":
   version: 3.1.8
   resolution: "tailwindcss@npm:3.1.8"
@@ -11989,6 +12066,16 @@ __metadata:
   version: 1.1.0
   resolution: "thunky@npm:1.1.0"
   checksum: 993096c472b6b8f30e29dc777a8d17720e4cab448375041f20c0cb802a09a7fb2217f2a3e8cdc11851faa71c957e2db309357367fc9d7af3cb7a4d00f4b66034
+  languageName: node
+  linkType: hard
+
+"tiny-glob@npm:^0.2.9":
+  version: 0.2.9
+  resolution: "tiny-glob@npm:0.2.9"
+  dependencies:
+    globalyzer: 0.1.0
+    globrex: ^0.1.2
+  checksum: aea5801eb6663ddf77ebb74900b8f8bd9dfcfc9b6a1cc8018cb7421590c00bf446109ff45e4b64a98e6c95ddb1255a337a5d488fb6311930e2a95334151ec9c6
   languageName: node
   linkType: hard
 
