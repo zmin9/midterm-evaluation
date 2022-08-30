@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import ReviewerImg0 from '../../../public/images/reviewer_0.png';
 import ReviewerImg1 from '../../../public/images/reviewer_1.png';
 import ReviewerImg2 from '../../../public/images/reviewer_2.png';
+import Layout from '../../components/Layout';
 import Section, { SectionContainer } from '../../components/Section';
 import Text from '../../components/Text';
 import mediaQuery from '../../styles/mediaQuery';
@@ -18,12 +19,7 @@ const ReviewSectionContainer = styled(SectionContainer)`
 
 const Reviews = styled.div`
   margin: 24px 8px 0;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-
   ${mediaQuery.large} {
-    flex-direction: row;
     margin: 24px -18px 0;
   }
 `;
@@ -93,20 +89,22 @@ const ReviewSection = () => {
         {'학생들의 후기'}
       </Section.Title>
       <Reviews>
-        {
-          reviews.map(({ lastName, content, age, img, imgBgColor }: ReviewInfo) =>
-            <ReviewCard key={lastName + age}>
-              <ReviewerProfile>
-                <ProfileImg imgBgColor={imgBgColor}>
-                  <Image src={img} alt={`프로필사진_${lastName}`} layout="fill" objectFit="cover"/>
-                </ProfileImg>
-                <Text type='textSR'>{age}</Text>
-                <Text type='textSB'>{`\0 ${lastName}OO 학생`}</Text>
-              </ReviewerProfile>
-              <Text type='textSR'>{content}</Text>
-            </ReviewCard>,
-          )
-        }
+        <Layout columns={{ small: 1, large: 1 / 3 }} gap={12}>
+          {
+            reviews.map(({ lastName, content, age, img, imgBgColor }: ReviewInfo) =>
+              <ReviewCard key={lastName + age}>
+                <ReviewerProfile>
+                  <ProfileImg imgBgColor={imgBgColor}>
+                    <Image src={img} alt={`프로필사진_${lastName}`} layout="fill" objectFit="cover"/>
+                  </ProfileImg>
+                  <Text type="textSR">{age}</Text>
+                  <Text type="textSB">{`\0 ${lastName}OO 학생`}</Text>
+                </ReviewerProfile>
+                <Text type="textSR">{content}</Text>
+              </ReviewCard>,
+            )
+          }
+        </Layout>
       </Reviews>
     </ReviewSectionContainer>
   );
