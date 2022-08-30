@@ -1,49 +1,51 @@
 import { PropsWithChildren } from 'react';
 import styled from 'styled-components';
 
-import { MediaType, setMediaQuery } from '../styles/mediaQuery';
+import mediaQuery from '../styles/mediaQuery';
 
-type PrimOrMedia<T> = T | Record<MediaType, T>;
+type Media = keyof typeof mediaQuery;
 
 type LayoutProps = {
-  column: PrimOrMedia<number>,
-  flexDirection?: PrimOrMedia<'row' | 'row-reverse' | 'column-reverse'>,
-  gap?: number,
-  spaceBetween?: PrimOrMedia<boolean>,
+  columns: Record<Media, number>,
+  gap?: number
 };
 
-const Grid = styled.div<Required<LayoutProps>>`
-  display: flex;
-  flex-wrap: wrap;
-  ${({ column, gap }) => setMediaQuery(column, (value) => `
-    & > * {width: calc((100% - (${(gap || 0)}px * (${value} - 1))) / ${value});}
-  `)}
-  ${({ gap }) => setMediaQuery(gap, (value) => `gap: ${value}px;`)}
-  ${({ spaceBetween }) => setMediaQuery(spaceBetween, (value) => `
-    ${value && 'justify-content: space-between;'}
-    & > * {width: fit-content;}
-  `)}
-  ${({ flexDirection }) => setMediaQuery(flexDirection, (value) => `flex-direction:${value};`)}
+type CellNum = Record<`${Media}CellNum`, number>;
+
+const Grid = styled.div<LayoutProps & CellNum>`
+  display: grid;
+  gap: ${({ gap }) => `${gap}px`};
+  @media (max-width: 1023px) {
+    grid-template-columns: repeat(${({ smallCellNum }) => smallCellNum}, 1fr);
+    & > * {
+      grid-column: ${({ columns }) => columns.small};
+    }
+  }
+
+  ${mediaQuery.large} {
+    grid-template-columns: repeat(${({ largeCellNum }) => largeCellNum}, 1fr);
+
+    & > * {
+      grid-column: ${({ columns }) => columns.large};
+    }
+  }
 `;
 
-const Layout = ({
-  column,
-  children,
-  gap = 0,
-  spaceBetween = false,
-  flexDirection = 'row',
-}: PropsWithChildren<LayoutProps>) => {
-
+const Layout = ({ columns, children, gap = 0 }: PropsWithChildren<LayoutProps>) => {
+  const cellNumSmallScreen = 1 / columns.small;
+  const cellNumLargeScreen = 1 / columns.large;
   return (
     <Grid
-      column={column}
-      flexDirection={flexDirection}
+      columns={columns}
+      smallCellNum={cellNumSmallScreen}
+      largeCellNum={cellNumLargeScreen}
       gap={gap}
-      spaceBetween={spaceBetween}
     >
       {children}
     </Grid>
   );
 };
+
+// 지금은 필요없지만 크기 비율을 조정하고 싶다면 compound component로 만들어서 사용할 수도 있겠다.
 
 export default Layout;

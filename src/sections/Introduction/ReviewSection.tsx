@@ -19,7 +19,6 @@ const ReviewSectionContainer = styled(SectionContainer)`
 
 const Reviews = styled.div`
   margin: 24px 8px 0;
-
   ${mediaQuery.large} {
     margin: 24px -18px 0;
   }
@@ -90,7 +89,7 @@ const ReviewSection = () => {
         {'학생들의 후기'}
       </Section.Title>
       <Reviews>
-        <Layout column={{ small: 1, large: 3 }} gap={12}>
+        <Layout columns={{ small: 1, large: 1 / 3 }} gap={12}>
           {
             reviews.map(({ lastName, content, age, img, imgBgColor }: ReviewInfo) =>
               <ReviewCard key={lastName + age}>
