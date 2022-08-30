@@ -1,3 +1,5 @@
+import styled from 'styled-components';
+
 import DifferentImgL from '../../../public/images/different-refund-large.png';
 import DifferentImgS from '../../../public/images/different-refund-small.png';
 import NaverPayImg from '../../../public/images/naver-pay.png';
@@ -6,7 +8,6 @@ import QuestionBox from '../../components/QuestionBox';
 import Section from '../../components/Section';
 import ImageHavingMaxWidth from '../../components/image/ImageHavingMaxWidth';
 import ImagesByMediaQuery from '../../components/image/ImagesByMediaQuery';
-import styled from 'styled-components';
 
 const AlignCenter = styled.div`
   display: flex;

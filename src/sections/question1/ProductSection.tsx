@@ -1,3 +1,6 @@
+import Image, { StaticImageData } from 'next/image';
+import styled from 'styled-components';
+
 import Book3dImg from '../../../public/images/3d_book.png';
 import Money3dImg from '../../../public/images/3d_money.png';
 import Test3dImg from '../../../public/images/3d_test.png';
@@ -6,8 +9,6 @@ import Section from '../../components/Section';
 import Text from '../../components/Text';
 import mediaQuery from '../../styles/mediaQuery';
 
-import Image, { StaticImageData } from 'next/image';
-import styled from 'styled-components';
 
 const ProductionItem = styled.div`
   display: flex;

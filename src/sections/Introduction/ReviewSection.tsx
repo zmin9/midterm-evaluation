@@ -1,11 +1,12 @@
+import Image, { StaticImageData } from 'next/image';
+import styled from 'styled-components';
+
 import ReviewerImg0 from '../../../public/images/reviewer_0.png';
 import ReviewerImg1 from '../../../public/images/reviewer_1.png';
 import ReviewerImg2 from '../../../public/images/reviewer_2.png';
 import Section, { SectionContainer } from '../../components/Section';
 import Text from '../../components/Text';
 import mediaQuery from '../../styles/mediaQuery';
-import Image, { StaticImageData } from 'next/image';
-import styled from 'styled-components';
 
 const ReviewSectionContainer = styled(SectionContainer)`
   background: ${({ theme }) => theme.purpleGradient};

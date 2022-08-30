@@ -1,7 +1,9 @@
-import mediaQuery from '../styles/mediaQuery';
-import Text from './Text';
 import { createContext, PropsWithChildren, useContext } from 'react';
 import styled from 'styled-components';
+
+import mediaQuery from '../styles/mediaQuery';
+
+import Text from './Text';
 
 type BackgroundColorType = 'bg1' | 'bg2';
 

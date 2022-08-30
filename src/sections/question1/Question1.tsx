@@ -1,5 +1,6 @@
 import QuestionBox from '../../components/QuestionBox';
 import Section from '../../components/Section';
+
 import DifferenceSection from './DifferenceSection';
 import ProductSection from './ProductSection';
 

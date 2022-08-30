@@ -1,9 +1,10 @@
+import styled from 'styled-components';
+
 import MathkingSeviceImg from '../../../public/images/what-mathking-does.png';
 import Section from '../../components/Section';
 import Text from '../../components/Text';
 import ImageHavingMaxWidth from '../../components/image/ImageHavingMaxWidth';
 import mediaQuery from '../../styles/mediaQuery';
-import styled from 'styled-components';
 
 const HowLayout = styled.span`
   ${mediaQuery.large} {

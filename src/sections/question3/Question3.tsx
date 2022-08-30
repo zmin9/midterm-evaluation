@@ -1,3 +1,5 @@
+import styled from 'styled-components';
+
 import AchievementImgL from '../../../public/images/achievement_large.png';
 import AchievementImgS from '../../../public/images/achievement_small.png';
 import CycleImg from '../../../public/images/cycle.png';
@@ -6,7 +8,6 @@ import Section from '../../components/Section';
 import Text from '../../components/Text';
 import ImageHavingMaxWidth from '../../components/image/ImageHavingMaxWidth';
 import ImagesByMediaQuery from '../../components/image/ImagesByMediaQuery';
-import styled from 'styled-components';
 
 const AchievementText = styled.h3`
   text-align: center;

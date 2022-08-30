@@ -1,9 +1,11 @@
-import QImg from '../../public/images/Q.png';
-import mediaQuery from '../styles/mediaQuery';
-import Text from './Text';
 import Image from 'next/image';
 import { PropsWithChildren } from 'react';
 import styled from 'styled-components';
+
+import QImg from '../../public/images/Q.png';
+import mediaQuery from '../styles/mediaQuery';
+
+import Text from './Text';
 
 const Container = styled.div`
   border-radius: 5px;

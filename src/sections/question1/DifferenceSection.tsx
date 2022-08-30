@@ -1,10 +1,11 @@
 
+import { StaticImageData } from 'next/image';
+
 import DiffImage0 from '../../../public/images/diff-graph_0.png';
 import DiffImage1 from '../../../public/images/diff-graph_1.png';
 import DiffImage2 from '../../../public/images/diff-graph_2.png';
 import Section from '../../components/Section';
 import ImageHavingMaxWidth from '../../components/image/ImageHavingMaxWidth';
-import { StaticImageData } from 'next/image';
 
 type Difference = {
   title: string,
