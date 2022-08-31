@@ -89,7 +89,7 @@ const ReviewSection = () => {
         {'학생들의 후기'}
       </Section.Title>
       <Reviews>
-        <Layout columns={{ small: 1, large: 1 / 3 }} gap={12}>
+        <Layout column={{ small: 1, large: 1 / 3 }} gap={12}>
           {
             reviews.map(({ lastName, content, age, img, imgBgColor }: ReviewInfo) =>
               <ReviewCard key={lastName + age}>

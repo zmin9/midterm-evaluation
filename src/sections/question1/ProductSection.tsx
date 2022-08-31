@@ -5,56 +5,14 @@ import Book3dImg from '../../../public/images/3d_book.png';
 import Money3dImg from '../../../public/images/3d_money.png';
 import Test3dImg from '../../../public/images/3d_test.png';
 import Video3dImg from '../../../public/images/3d_video.png';
+import Layout from '../../components/Layout';
 import Section from '../../components/Section';
 import Text from '../../components/Text';
 import mediaQuery from '../../styles/mediaQuery';
 
 
-const ProductionItem = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  ${mediaQuery.large} {
-    flex-direction: column-reverse;
-    align-items: start;
-  }
-
-  & + & {
-    margin-top: 24px;
-
-    ${mediaQuery.large} {
-      margin-top: 0;
-    }
-  }
-`;
-
-const ItemText = styled.div`
-  display: flex;
-  flex-direction: column;
-
-  & > * + * {
-    margin-top: 8px;
-  }
-
-  ${mediaQuery.large} {
-    margin-top: 16px;
-  }
-`;
 const Productions = styled.div`
-  display: flex;
-  flex-direction: column;
   margin-right: 10px;
-
-  ${mediaQuery.large} {
-    flex-direction: row;
-    justify-content: space-between;
-    margin-right: -56px;
-
-    & > * {
-      flex: 1 1 0;
-    }
-  }
 `;
 
 const ItemTitle = styled.span`
@@ -64,17 +22,18 @@ const ItemTitle = styled.span`
 const ItemDesc = styled.span`
   white-space: pre-wrap;
   color: ${({ theme }) => theme.text2};
+  margin-top: 8px;
 `;
 
 const ItemImgContainer = styled.div<Pick<Product, 'imgBgColor'>>`
+  position: relative;
   width: 64px;
   height: 64px;
   background-color: ${({ imgBgColor }) => imgBgColor};
   border-radius: 12px;
   padding: 0 14px;
 
-  display: flex;
-  align-items: center;
+  margin: auto 0;
 
   div {
     position: relative;
@@ -135,32 +94,41 @@ const Products = () => {
   return (
     <Section bgColor="bg1" paddingT={60}>
       <Productions>
-        {
-          products.map((item) => (
-            <ProductionItem key={item.title}>
-              <ItemText>
-                <ItemTitle>
-                  <Text type='textSR'>
-                    {item.title}
-                  </Text>
-                </ItemTitle>
-                <ItemDesc>
-                  <Text type='textSR'>
-                    {item.description}
-                  </Text>
-                </ItemDesc>
-              </ItemText>
-              <ItemImgContainer imgBgColor={item.imgBgColor}>
+        <Layout column={{ small: 1, large: 4 }} gap={24}>
+          {
+            products.map((item) => (
+              <Layout key={item.title}
+                      column={{ small: 2, large: 1 }}
+                      gap={16}
+                      spaceBetween
+                      flexDirection={{ small: 'row', large: 'column-reverse' }}
+              >
                 <div>
-                  <Image src={item.img} alt={item.title + '_icon'} layout="fill" objectFit="contain"/>
+                  <ItemTitle>
+                    <Text type="textSR">
+                      {item.title}
+                    </Text>
+                  </ItemTitle>
+                  <ItemDesc>
+                    <Text type="textSR">
+                      {item.description}
+                    </Text>
+                  </ItemDesc>
                 </div>
-              </ItemImgContainer>
-            </ProductionItem>
-          ))
-        }
+                <div>
+                  <ItemImgContainer imgBgColor={item.imgBgColor}>
+                    <div>
+                      <Image src={item.img} alt={item.title + '_icon'} layout="fill" objectFit="contain"/>
+                    </div>
+                  </ItemImgContainer>
+                </div>
+              </Layout>
+            ))
+          }
+        </Layout>
       </Productions>
       <ProductionText>
-        <Text type='textMB'>
+        <Text type="textMB">
           {'이 모든 구성이 수학대왕 '}<span>프리미엄</span>{'에 \n'}
           포함되어 있습니다.
         </Text>
