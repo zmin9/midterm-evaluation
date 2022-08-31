@@ -21,6 +21,7 @@ const ItemTitle = styled.span`
 const ItemDesc = styled.span`
   white-space: pre-wrap;
   color: ${({ theme }) => theme.text2};
+  margin-top: 8px;
 `;
 
 const ItemImgContainer = styled.div<Pick<Product, 'imgBgColor'>>`
@@ -101,7 +102,7 @@ const Products = () => {
                       spaceBetween
                       flexDirection={{ small: 'row', large: 'column-reverse' }}
               >
-                <Layout column={1} gap={8}>
+                <div>
                   <ItemTitle>
                     <Text type="textSR">
                       {item.title}
@@ -112,12 +113,14 @@ const Products = () => {
                       {item.description}
                     </Text>
                   </ItemDesc>
-                </Layout>
-                <ItemImgContainer imgBgColor={item.imgBgColor}>
-                  <div>
-                    <Image src={item.img} alt={item.title + '_icon'} layout="fill" objectFit="contain"/>
-                  </div>
-                </ItemImgContainer>
+                </div>
+                <div>
+                  <ItemImgContainer imgBgColor={item.imgBgColor}>
+                    <div>
+                      <Image src={item.img} alt={item.title + '_icon'} layout="fill" objectFit="contain"/>
+                    </div>
+                  </ItemImgContainer>
+                </div>
               </Layout>
             ))
           }

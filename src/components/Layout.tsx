@@ -16,12 +16,12 @@ const Grid = styled.div<Required<LayoutProps>>`
   display: flex;
   flex-wrap: wrap;
   ${({ column, gap }) => setMediaQuery(column, (value) => `
-    & > * {width: calc((100% - (${(gap || 0)}px * (${value} - 1))) / ${value});}
+    & > * {flex: 0 1 calc((100% - (${(gap || 0)}px * (${value} - 1))) / ${value});}
   `)}
   ${({ gap }) => setMediaQuery(gap, (value) => `gap: ${value}px;`)}
   ${({ spaceBetween }) => setMediaQuery(spaceBetween, (value) => `
     ${value && 'justify-content: space-between;'}
-    & > * {width: fit-content;}
+    & > * {flex: 0 1 auto;}
   `)}
   ${({ flexDirection }) => setMediaQuery(flexDirection, (value) => `flex-direction:${value};`)}
 `;
@@ -33,7 +33,6 @@ const Layout = ({
   spaceBetween = false,
   flexDirection = 'row',
 }: PropsWithChildren<LayoutProps>) => {
-
   return (
     <Grid
       column={column}
