@@ -6,7 +6,6 @@ import ImagesByMediaQuery from '../../components/image/ImagesByMediaQuery';
 const WhoSection = () => {
   return (
     <Section bgColor="bg1" paddingT={60}>
-      {/*TODO responsive*/}
       <Section.Title>
         {'국내 교육 1위 \n'}
         {'인공지능 학습앱 '}
